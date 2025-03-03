@@ -1,0 +1,7 @@
+<div class="input-wrapper">
+    <textarea class="input-field block px-4 py-3 bg-[--contact-form-bg] placeholder:text-[--contact-form-text] border border-transparent focus:bg-transparent focus:border-[#161616] dark:bg-white dark:text-black" name="{{ handle }}" rows="5" {{ if placeholder }}placeholder="{{ placeholder }}"{{ /if }}
+        {{ if character_limit }}maxlength="{{ character_limit }}"{{ /if }}
+        {{ if js_driver }}{{ js_attributes }}{{ /if }} {{ if validate|contains:required }}required{{ /if }}>
+        {{ value }}
+    </textarea>
+</div>

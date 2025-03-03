@@ -1,0 +1,21 @@
+tree:
+  -
+    id: 5f238d01-efdf-4b95-947f-6b8898875f99
+    title: 'About DGA'
+    url: '#'
+  -
+    id: 70af6df2-45eb-4c7b-9841-66404f881556
+    title: 'Privacy and terms of use'
+    url: '#'
+  -
+    id: d291c787-66ac-4366-936a-78116fd7dc00
+    title: 'How to use DGA'
+    url: '#'
+  -
+    id: 47926664-f0d1-4f4b-b272-657c6e462b75
+    title: 'News and events'
+    url: '#'
+  -
+    id: d8f3faa3-a6f8-4365-8255-fd6c98b6a86e
+    title: 'Service level agreement statistics'
+    url: '#'

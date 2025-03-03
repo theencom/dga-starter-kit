@@ -1,0 +1,26 @@
+<!-- Video Popup -->
+<div id="videoPopup" class="hidden fixed inset-0 z-50">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    
+    <!-- Popup Content -->
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 md:w-3/4 lg:w-2/3 aspect-video bg-white rounded-lg shadow-xl">
+      <!-- Close Button -->
+      <button id="closePopup" class="absolute -top-4 -right-4 bg-white rounded-full p-2 shadow-lg z-10">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      
+      <!-- Video Container -->
+      <div class="relative w-full h-full">
+        <iframe id="videoFrame"
+          class="absolute top-0 left-0 w-full h-full rounded-lg"
+          src=""
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>

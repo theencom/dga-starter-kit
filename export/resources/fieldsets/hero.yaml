@@ -1,0 +1,88 @@
+title: Hero
+fields:
+  -
+    handle: version
+    field:
+      options:
+        hero_section_1: 'Variant 1'
+        hero_section_2: 'Variant 2'
+        hero_section_3: 'Variant 3'
+        hero_section_4: 'Variant 4'
+        hero_section_5: 'Variant 5'
+        hero_section_6: 'Variant 6'
+        hero_section_7: 'Variant 7'
+      display: 'Hero Variant'
+      default: hero_section_1
+      type: button_group
+      instructions: 'Please select a hero variant'
+      validate:
+        - required
+      localizable: true
+  -
+    handle: quote
+    field:
+      type: toggle
+      display: 'Quote?'
+      localizable: true
+  -
+    import: text_color
+  -
+    handle: title
+    field:
+      display: Title
+      type: text
+      instructions: 'Title of the hero'
+      validate:
+        - required
+      localizable: true
+  -
+    import: font_weight
+    prefix: title_
+  -
+    handle: has_description
+    field:
+      display: 'Has Description'
+      type: toggle
+      instructions: 'Toggle this to enable hero description, under the title.'
+      width: 33
+      localizable: true
+  -
+    handle: description
+    field:
+      display: Description
+      type: textarea
+      instructions: 'Hero description if applicable'
+      if:
+        has_description: 'equals true'
+      width: 66
+      localizable: true
+  -
+    import: font_weight
+    prefix: description_
+  -
+    import: background_color
+    prefix: hero_
+  -
+    handle: hero_background_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Hero Background Image'
+      localizable: true
+  -
+    handle: hero_image
+    field:
+      display: 'Hero Image'
+      type: assets
+      container: assets
+      max_files: 1
+      localizable: true
+  -
+    import: button
+  -
+    handle: flip
+    field:
+      type: toggle
+      display: Flip
+      localizable: true

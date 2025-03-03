@@ -1,0 +1,59 @@
+<div class="w-full h-[30rem] bg-primaryGreen-600 flex flex-col justify-center">
+    <div class="container-custom flex flex-col gap-6">
+        <h1 class="text-white !text-3xl md:!text-6xl">{{title}}</h1>
+    </div>
+</div>
+
+<div class="container-custom py-10">
+    <div class="flex items-center flex-wrap gap-3">
+        {{album_images}}
+            <img src="{{url}}" alt="{{ alt }}" data-image-url="{{url}}" class="img-popup-trigger cursor-pointer w-full md:w-[48%] xl:w-[32.333%] h-[300px] object-cover">
+        {{/album_images}}
+    </div>
+</div>
+
+
+{{partial:partials/image_popup}}
+
+
+<script>
+        // Get all elements with unique names
+        const imgPopupContainer = document.getElementById('imgPopupContainer');
+        const imgPopupImage = document.getElementById('imgPopupImage');
+        const imgPopupCloseBtn = document.getElementById('imgPopupClose');
+        const imgPopupTriggers = document.querySelectorAll('.img-popup-trigger');
+    
+        // Add click handlers to all trigger images
+        imgPopupTriggers.forEach(trigger => {
+          trigger.addEventListener('click', () => {
+            const imageUrl = trigger.dataset.imageUrl;
+            imgPopupImage.src = imageUrl;
+            imgPopupImage.alt = trigger.alt; // Transfer the alt text
+            imgPopupContainer.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+          });
+        });
+    
+        // Close popup handler
+        const closeImgPopup = () => {
+          imgPopupContainer.classList.add('hidden');
+          document.body.style.overflow = ''; // Restore scrolling
+        };
+    
+        // Add close button click handler
+        imgPopupCloseBtn.addEventListener('click', closeImgPopup);
+    
+        // Close on backdrop click
+        imgPopupContainer.addEventListener('click', (e) => {
+          if (e.target != imgPopupContainer) {
+            closeImgPopup();
+          }
+        });
+    
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            closeImgPopup();
+          }
+        });
+</script>

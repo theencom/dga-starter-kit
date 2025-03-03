@@ -1,0 +1,394 @@
+
+<!-- Form -->
+{{ form:create in="contact_us" class="bg-white mt-8" }}
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 dark:bg-darkBg">
+        <!-- First Name -->
+        <div class="">
+            <label for="first-name" class="block text-sm font-semibold mb-2">
+                <span class="text-[#B42318]">*</span> الاسم الأول
+            </label>
+            <div class="input-wrapper">
+                <input type="text" id="first-name" name="first_name" placeholder="Type your first name" required
+                    class="input-field block bg-[--contact-form-bg] placeholder:text-[--contact-form-text] border border-transparent focus:bg-transparent focus:border-[#161616]" />
+                <div class="animated-line"></div>
+            </div>
+        </div>
+        <!-- Last Name -->
+        <div class="">
+            <label for="last-name" class="block text-sm font-semibold mb-2">
+                <span class="text-[#B42318]">*</span> اسم العائلة
+            </label>
+            <div class="input-wrapper">
+                <input type="text" id="last-name" name="last_name" placeholder="Type your last name" required
+                    class="input-field block bg-[--contact-form-bg] placeholder:text-[--contact-form-text] border border-transparent focus:bg-transparent focus:border-[#161616]" />
+                <div class="animated-line"></div>
+            </div>
+        </div>
+        <!-- Email -->
+        <div class="">
+            <label for="email" class="block text-sm font-semibold mb-2">
+                <span class="text-[#B42318]">*</span> بريد إلكتروني
+            </label>
+            <div class="input-wrapper">
+                <input type="email" id="email" name="email" placeholder="Type your email" required
+                    class="input-field block bg-[--contact-form-bg] placeholder:text-[--contact-form-text] border border-transparent focus:bg-transparent focus:border-[#161616]" />
+                <div class="animated-line"></div>
+            </div>
+        </div>
+        <!-- Phone -->
+        <div class="">
+            <label for="phone" class="block text-sm font-semibold mb-2">
+                <span class="text-[#B42318]">*</span> هاتف
+            </label>
+            <div class="input-wrapper flex border rounded-[4px] border-transparent hover:border-[#161616]" tabindex="0">
+                <select id="country-code" name="country_code" class="block bg-[--contact-form-bg]  h-[2.5rem] text-[--contact-form-text]">
+                    <option value="+966" selected>+966</option>
+                    <option value="+1">+1</option>
+                    <option value="+44">+44</option>
+                    <option value="+971">+971</option>
+                </select>
+                <input type="tel" id="phone" name="phone" placeholder="00 000 0000" required
+                    class="input-field block bg-[--contact-form-bg] placeholder:text-[--contact-form-text] border-l-0 border-transparent focus:bg-transparent focus:border-[#161616] focus:border-l-0" />
+                <div class="animated-line"></div>
+            </div>
+        </div>
+
+        <!-- Subject -->
+        <div class="">
+            <label for="subject" class="block text-sm font-semibold mb-2">
+                موضوع
+            </label>
+            <div class="input-wrapper">
+                <input type="text" id="subject" name="subject" placeholder="Type your subject"
+                    class="input-field block bg-[--contact-form-bg] placeholder:text-[--contact-form-text] border border-transparent focus:bg-transparent focus:border-[#161616]" />
+                <div class="animated-line"></div>
+            </div>
+        </div>
+
+        <!-- Category -->
+        <div class="select-category relative">
+            <label for="category" class="block text-sm font-semibold mb-2">
+                فئة
+            </label>
+            <select id="category" class="select2-category bg-[--contact-form-bg] w-full h-[2.5rem] text-[--contact-form-text]" name="category">
+                <option value="" selected disabled>Select Category</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="complaint">Complaint</option>
+                <option value="inquiry">Inquiry</option>
+            </select>
+        </div>
+
+        <!-- Message -->
+        <div class="">
+            <label for="message" class="block text-sm font-semibold mb-2">
+                كيف يمكننا المساعدة؟
+            </label>
+            <div class="input-wrapper">
+                <textarea id="message" name="message" placeholder="Placeholder text" rows="4"
+                    class="input-field block px-4 py-3 bg-[--contact-form-bg] placeholder:text-[--contact-form-text] border border-transparent focus:bg-transparent focus:border-[#161616]"></textarea>
+                <div class="animated-line"></div>
+            </div>
+        </div>
+
+        <!-- File Upload -->
+
+        <div>
+            <p class="block font-semibold mb-2">تحميل الملفات</p>
+            <p class="text-xs text-[#64748B] mb-4">
+                الحد الأقصى لحجم الملف المسموح به هو 2 ميجا بايت، تنسيقات الملفات المدعومة تشمل .jpg، .png، و.pdf.
+            </p>
+            <div class="file-input-container">
+                <label for="upload_files" class="file-label flex items-center justify-between" id="file-label"
+                    tabindex="0">
+                    <div class="progress-container inline-flex items-center">
+                        <div class="hidden progress-circle" id="progress-circle"></div>
+                        <svg id="tick-icon" class="hidden tick-icon" width="20" height="20" viewBox="0 0 20 20"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10.0002 19.1667C15.0628 19.1667 19.1668 15.0626 19.1668 10C19.1668 4.93743 15.0628 0.833374 10.0002 0.833374C4.93755 0.833374 0.833496 4.93743 0.833496 10C0.833496 15.0626 4.93755 19.1667 10.0002 19.1667ZM5.87534 9.26781C5.54991 9.59324 5.54991 10.1209 5.87534 10.4463L8.23237 12.8033C8.5578 13.1288 9.08544 13.1288 9.41088 12.8033L14.1249 8.0893C14.4504 7.76386 14.4504 7.23622 14.1249 6.91078C13.7995 6.58535 13.2718 6.58535 12.9464 6.91078L8.82162 11.0356L7.05385 9.26781C6.72842 8.94237 6.20078 8.94237 5.87534 9.26781Z"
+                                fill="#067647" />
+                        </svg>
+
+                        <span class="file-text">تصفح الملفات</span>
+                    </div>
+                    <button type="button" class="close-btn p-1 rounded-[4px]" id="close-btn">
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0.646447 0.646569C0.841709 0.451307 1.15829 0.451307 1.35355 0.646569L5 4.29302L8.64645 0.646569C8.84171 0.451307 9.15829 0.451307 9.35355 0.646569C9.54882 0.841831 9.54882 1.15841 9.35355 1.35368L5.70711 5.00012L9.35355 8.64657C9.54882 8.84183 9.54882 9.15841 9.35355 9.35368C9.15829 9.54894 8.84171 9.54894 8.64645 9.35368L5 5.70723L1.35355 9.35368C1.15829 9.54894 0.841709 9.54894 0.646447 9.35368C0.451184 9.15841 0.451184 8.84183 0.646447 8.64657L4.29289 5.00012L0.646447 1.35368C0.451185 1.15841 0.451185 0.841831 0.646447 0.646569Z"
+                                fill="#161616" />
+                        </svg>
+                    </button>
+                </label>
+                <input type="file" id="upload_files" class="hidden" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="dark:bg-darkBg">
+        <button type="submit" class="btn-primary">
+            طلب تصريح
+        </button>
+    </div>
+    {{ /form:create  }}
+
+
+
+<style>
+    :root {
+        --text-default-color: #161616;
+        --primary-color: #1b8354;
+
+        --border-primary-color: #d2d6db;
+        --border-radius: 12px;
+
+        --button-primary-color: #1b8354;
+        --button-primary-hover: #166a45;
+        --button-secondary-color: #d2d6db;
+        --button-secondary-hover: #f3f4f6;
+        --button-secondary-border-hover: #e5e7eb;
+        --button-active-color: #104631;
+        --button-border-radius: 4px;
+        --button-padding-block: 0.5rem;
+        --button-padding-inline: 0.75rem;
+        --button-text-color: #ffffff;
+        --button-secondary-text-color: #161616;
+
+        --contact-form-bg: #f3f4f6;
+        --contact-form-text: #6c737f;
+        --form-input-radius: 4px;
+        --form-padding-block: 0.5rem;
+        --form-padding-inline: 0.5rem;
+    }
+
+    /********** Reusable Input focus styles **********/
+    .input-wrapper {
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        border-radius: 4px;
+    }
+
+    .input-field {
+        outline: none;
+        width: 100%;
+        border-radius: 4px;
+        padding-left: 8px;
+        padding-right: 16px;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .animated-line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #161616;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .input-field:focus {
+        outline: none;
+    }
+
+    .input-field:focus+.animated-line {
+        transform: scaleX(1);
+    }
+
+    .input-field:not(textarea) {
+        height: 40px;
+    }
+
+    /********** Category input Styles ***********/
+    .select2-container {}
+
+    .select2-container--default .select2-selection--single {
+        background-color: #f3f4f6;
+        /* Matches your input background */
+        border-radius: 4px;
+        /* Matches rounded corners */
+        padding-inline: 1rem !important;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 400;
+        border: 1px solid transparent;
+        color: #6c737f;
+    }
+
+    .select2-container--default .select2-selection--single:hover {}
+
+    .select2-container .select2-selection--single .select2-selection__rendered {
+        padding: 0;
+    }
+
+    #country-code+.select2-container .select2-selection--single .select2-selection__rendered {
+        color: #161616;
+    }
+
+    #country-code+.select2-container--default .select2-selection--single {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .select2-container--default.select2-container--open.select2-container--below .select2-selection--single,
+    .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+        border-radius: 4px;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #6c737f;
+    }
+
+    /* Placeholder Text Styling */
+    .select2-container--default .select2-selection--single .select2-selection__placeholder {
+        color: #6c737f;
+        /* Gray placeholder text */
+    }
+
+    /* Dropdown Menu Styling */
+    .select2-dropdown.custom-dropdown {
+        border: 1px solid #d2d6db;
+        /* Matches dropdown border */
+        margin-top: 8px;
+        border-radius: 4px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 8px;
+        background-color: #ffffff;
+    }
+
+    .select2-results__option {
+        padding: 8px !important;
+        font-size: 14px;
+        color: #374151;
+        /* Text color */
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .select2-results__option--hover,
+    .select2-results__option--highlighted {
+        background-color: #f3f4f6 !important;
+        /* Hover background */
+        color: #1f2937 !important;
+        /* Text color on hover */
+    }
+
+    /* Dropdown Open Arrow Rotation */
+    .select2-container--default.select2-container--open .select2-selection--single {
+        border-radius: 4px;
+    }
+
+    /* Custom arrow styling */
+    .custom-arrow {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease-in-out;
+        pointer-events: none;
+        /* Ensure it doesn’t block clicks */
+    }
+
+    /* Rotate on dropdown open */
+    .custom-arrow.rotate {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    /* Position adjustment for the Select2 container */
+    .select2-container--default .select2-selection--single {
+        position: relative;
+        padding-right: 40px;
+        /* Add space for custom arrow */
+    }
+
+    .select2-selection__arrow {
+        display: none !important;
+        /* Hide the default Select2 arrow */
+    }
+
+    /********* File Input Styles  ***********/
+    /* Hide the default file input */
+    input[type="file"].hidden {
+        display: none;
+    }
+
+    .file-input-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .file-label {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        padding-inline: 0.75rem;
+        height: 32px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border: 1px solid #d2d6db;
+        border-radius: 4px;
+        color: #161616;
+        cursor: pointer;
+        position: relative;
+        background-color: #f9fafb;
+    }
+
+    .file-label:hover {
+        border-color: #e5e7eb;
+        background-color: #f3f4f6;
+    }
+
+    .file-text {}
+
+    .progress-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .progress-circle {
+        width: 20px;
+        height: 20px;
+        border: 2px solid transparent;
+        border-top-color: #161616;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .close-btn {
+        cursor: pointer;
+        margin-left: auto;
+        background: none;
+        border: none;
+        display: none;
+    }
+
+    /* Link hover styles */
+    .right_side_links:hover {
+        color: #54c08a;
+        text-decoration: underline;
+    }
+
+    .right_side_links:hover .copy-icon {
+        content: url("/icons/copy-01-hovered.svg");
+    }
+
+    .right_side_links_location:hover .copy-icon {
+        content: url("/icons/link-icon-hovered.svg");
+    }
+</style>

@@ -1,0 +1,53 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: category
+            field:
+              options:
+                -
+                  key: سؤال
+                  value: سؤال
+                -
+                  key: اقتراح
+                  value: اقتراح
+                -
+                  key: شكوى
+                  value: شكوى
+              type: select
+              display: الفئة
+              localizable: true
+              placeholder: الفئة
+              validate:
+                - required
+          -
+            handle: full_name
+            field:
+              type: text
+              display: 'الاسم الكامل للموهبة'
+              localizable: true
+              placeholder: 'الاسم الكامل'
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              input_type: email
+              type: text
+              display: 'البريد إلكتروني'
+              localizable: true
+              placeholder: 'البريد إلكتروني'
+              validate:
+                - required
+          -
+            handle: message
+            field:
+              type: textarea
+              display: الرسالة
+              localizable: true
+              placeholder: الرسالة
+              validate:
+                - required

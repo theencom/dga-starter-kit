@@ -1,0 +1,87 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: sections
+            field:
+              type: replicator
+              display: Sections
+              localizable: true
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: title
+                          field:
+                            type: text
+                            display: Title
+                        -
+                          handle: links
+                          field:
+                            type: replicator
+                            display: Links
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    fields:
+                                      -
+                                        handle: icon
+                                        field:
+                                          max_files: 1
+                                          container: assets
+                                          type: assets
+                                          display: Icon
+                                      -
+                                        handle: link
+                                        field:
+                                          type: link
+                                          display: Link
+          -
+            handle: footer_logos
+            field:
+              type: replicator
+              display: 'Footer Logos'
+              localizable: true
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: logo
+                          field:
+                            max_files: 1
+                            container: assets
+                            type: assets
+                            display: Logo
+                            localizable: true
+                        -
+                          handle: link
+                          field:
+                            type: link
+                            display: Link
+                            localizable: true
+          -
+            handle: footer_copyright_information
+            field:
+              type: text
+              display: 'Footer Copyright Information'
+              localizable: true
+          -
+            handle: external_code
+            field:
+              type: code
+              display: 'External Code'
+              localizable: true

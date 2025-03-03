@@ -1,0 +1,112 @@
+<section class="text-white flex w-full justify-center min-h-screen">
+    <div class="flex flex-col gap-4 w-full max-w-[600px] mt-16">
+        {{ blocks }}
+        {{ select_form }}
+            <h3 class="text-2xl font-bold">
+                {{  title }}
+            </h3>
+            <form method="POST" action="/login/by/nafath" class="flex flex-col gap-2" id="nafath-form">
+                {{  csrf_field }}
+                <div class="bg-green-600 text-white p-2 hidden flex-col gap-2 success-container"></div>
+                <div class="bg-red-300 text-white p-2 hidden flex-col gap-2 errors-container"></div>
+                <div class="flex gap-2 justify-between">
+                    <div class="flex flex-col gap-2 w-full">
+                        <input type="text" name="national_id" placeholder="Nationa ID" maxlength="10" class="border-2 border-primaryGreen-500 rounded p-2 w-full national_id text-black" oninput="if(isNaN(this.value)) { this.value = '';}" />
+                    </div>
+                    <input type="submit" class="bg-primaryGreen-500 text-white rounded flex justify-center items-center px-4 py-2 max-h-[45px]" value="Login by nafath" />
+                </div>
+            </form>
+            {{ form:test_events_form }}
+                {{ if success }}
+                    <div class="bg-green-300 text-white p-2">
+                        {{ success }}
+                    </div>
+                {{ else }}
+                    {{ if errors }}
+                        <div class="bg-red-300 text-white p-2">
+                            {{ errors }}
+                                {{ value }}<br>
+                            {{ /errors }}
+                        </div>
+                    {{ /if }}
+                    {{ fields }}
+                        <div class="w-full flex flex-col mb-4">
+                            <label>{{ display }}</label>
+                            <div class="p-1">{{ field }}</div>
+                            {{ if error }}
+                                <p class="text-gray-500">{{ error }}</p>
+                            {{ /if }}
+                        </div>
+                    {{ /fields }}
+                    <input type="text" class="hidden" name="{{ honeypot ?? 'honeypot' }}">
+                    <button class="w-full bg-white px-4 py-2 text-center rounded text-black" type="submit">Submit</button>
+                {{ /if }}
+            {{ /form:test_events_form }}
+        {{ /select_form }}
+    {{ /blocks }}
+    </div>
+</section>
+
+<script>
+
+    var nafathForm = document.getElementById("nafath-form");
+    var errorsContainer = nafathForm.querySelector(".errors-container");
+
+
+    nafathForm.addEventListener("submit", function(e) {
+        
+        e.preventDefault();
+        
+        var formData = new FormData(nafathForm);
+
+        fetch(nafathForm.action, {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (!data.success) {
+                throw new Error(JSON.stringify(data.messages));                
+            }
+
+            document.querySelectorAll(".error-message").forEach(el => el.remove());
+            var successContainer = document.querySelector(".success-container");
+            successContainer.innerHTML = data.message + "<br>" + data.data.random;
+            successContainer.classList.remove("hidden");
+            successContainer.classList.add("flex");
+
+            nafathForm.querySelectorAll("input[type='submit']").forEach(el => {
+                el.setAttribute("disabled",true);
+                el.classList.add("bg-opacity-50");
+            });
+
+        })
+        .catch(error => {
+            
+            var errors = JSON.parse(error.message);
+
+            document.querySelectorAll(".error-message").forEach(el => el.remove());
+
+            for (var error in errors) {
+
+                let newError = document.createElement("div");
+                newError.classList.add("bg-red-300", "text-white", "p-2","error-message");
+                newError.innerHTML = errors[error];
+
+                if(!isNaN(error)){
+                    errorsContainer.appendChild(newError);
+                    errorsContainer.classList.remove("hidden");
+                    errorsContainer.classList.add("flex");
+                    continue;
+                };
+
+                var errorEl = document.querySelector("." + error);
+
+                if(errorEl){
+                    errorEl.parentElement.appendChild(newError);
+                }
+            }
+
+        });
+    });    
+</script>

@@ -1,0 +1,20 @@
+buttons:
+  -
+    id: search-btn
+    title: بحث
+    icon: icons/search-alt-svgrepo-com.svg
+    type: new_set
+    enabled: true
+  -
+    title: English
+    icon: icons/translate-icon.svg
+    type: new_set
+    enabled: false
+    link: /
+  -
+    title: التسجيل
+    icon: icons/user.svg
+    type: new_set
+    enabled: true
+    link: /cp
+origin: english

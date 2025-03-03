@@ -1,0 +1,134 @@
+
+.nav-menu-link {
+    position: relative;
+}
+.nav-button {
+    position: relative;
+}
+
+.nav-menu-link:hover::after,
+.nav-button:hover::after {
+    position: absolute;
+    content: "";
+    background-color: {{theme:secondary_color}};
+    width: 87%;
+    height: 6px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+.nav-menu-link:active::after,
+.nav-button:active::after {
+    background-color: {{theme:secondary_color}};
+}
+.nav-menu-link.selected,
+.nav-button.selected {
+    background-color: {{theme:primary_color}};
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+
+.nav-menu-link.selected:hover,
+.nav-button.selected:hover {
+    background-color: {{theme:hover_primary_color}};
+    color: #ffffff;
+}
+.nav-menu-link.selected::after,
+.nav-button.selected::after {
+    position: absolute;
+    content: "";
+    width: 87%;
+    height: 6px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+    background-color: {{theme:secondary_color}};
+}
+.nav-menu-link.selected img,
+.nav-button.selected img {
+    filter: brightness(0) invert(1); /* Turns icon white when selected*/
+}
+.search-bar-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+#openMessagePopup:hover, #openCallPopup:hover {
+    background-color: {{theme:hover_primary_color}};
+} 
+
+.primaryText {
+    color: {{theme:primary_color}};
+}
+
+.nav-button.selected:hover span {
+    color: #ffffff !important;
+}
+
+
+@media (min-width: 640px) {
+    .nav-menu-link:hover {
+      background-color: #F3F4F6;
+      
+    }
+  }
+
+
+
+/*********** BUTTON COMPONENT STYLES  STARTS***********/
+/* Button Style: primary */
+.btn-primary {
+    height: 40px;
+    padding-inline: 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: {{theme:primary_color}};
+    color: var(--button-primary-text-color);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+.btn-primary:hover {
+    background-color: {{theme:hover_primary_color}};
+}
+.btn-primary:active {
+    background-color: #104631;
+}
+.btn-primary:focus {
+    outline: none;
+    border-radius: 4px;
+}
+
+/* Button Style: secondary-outline */
+.btn-secondary-outline {
+    height: 40px;
+    padding-inline: 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    border: 1px solid var(--button-secondary-outline-color);
+    color: var(--text-default-color);
+}
+.btn-secondary-outline:hover {
+    background-color: #f3f4f6;
+}
+.btn-secondary-outline:active {
+    background-color: #e5e7eb;
+}
+.btn-secondary-outline:focus,
+.btn-secondary-outline:focus-visible {
+    outline: none;
+    border: 2px solid #161616;
+}
+/*********** BUTTON COMPONENT STYLES ENDS ***********/

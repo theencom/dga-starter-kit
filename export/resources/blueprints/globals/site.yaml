@@ -1,0 +1,13 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: global_last_updated
+            field:
+              type: date
+              display: 'Global Last Updated'
+              localizable: true
+              sortable: false

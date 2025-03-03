@@ -1,0 +1,30 @@
+tree:
+  -
+    id: 93d5ade8-633b-4902-bfe6-92de6a9555a4
+    entry: home
+    children:
+      -
+        id: 00c00d21-4a79-4d0a-b0af-55c835c17726
+        title: 'Test Child'
+        url: '#'
+  -
+    id: 7caa7914-0057-41b9-8035-faf02485845c
+    entry: 62b71fa8-e213-4256-a14b-abdf8dcdb65e
+    children:
+      -
+        id: 5f9cec11-c76b-49a4-b9f3-6a0e4fdb1f97
+        title: 'Test Child 2'
+        url: '#'
+      -
+        id: cf278048-f583-4407-9bb3-24c3be920c06
+        title: 'Test Child 3'
+        url: '#'
+  -
+    id: fd7f328c-78ad-4ce0-9422-be62b4a5941e
+    entry: 5ede7c27-7196-468a-baf1-908bf0872794
+  -
+    id: 180a3231-65db-4fd0-b238-816033fbc297
+    entry: a0cc8b44-10a1-4f19-aa9c-bca6fd92211b
+  -
+    id: c73f506b-e5ce-4f2d-b6be-8be4f8741b79
+    entry: 80fff023-cdfb-45fa-a172-ce0158608d59

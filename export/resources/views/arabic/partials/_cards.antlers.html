@@ -1,0 +1,74 @@
+{{ if features }}
+  <!-- ARTICLES SECTION STARTS-->
+  <section class="py-10 dark:bg-darkBg">
+    <div class="container-custom">
+      <div class="flex flex-col md:flex-row md:items-center justify-between">
+        <h2 class="dark:text-darkText">{{ title }}</h2>
+        {{ if toggle }}
+          <a href="{{ link }}" {{if target_blank}} target="_blank" {{/if}}
+            class="btn-secondary-outline mt-5 sm:mt-0 dark:hover:bg-darkBgLight dark:text-darkText">
+            {{ label }}
+          </a>
+        {{ /if }}
+      </div>
+
+      <p class="mt-6 w-full sm:w-[70%] dark:text-darkText dark:opacity-darkTextOpacity">
+        {{ description }}
+      </p>
+    </div>
+    <div class="container-custom">
+      <div class="swiper articles-slider mt-8">
+        <div class="swiper-wrapper mb-6 md:mb-0">
+          {{ features }}
+            <div
+              class="swiper-slide h-auto md:!h-[26.625rem] border border-[--border-primary-color] rounded-[--border-radius] bg-white dark:bg-darkBgLight dark:border-darkBorderColor p-4">
+              <div class="flex flex-col justify-between h-full overflow-hidden">
+                <div class="flex-1 mb-6">
+                  <img src="{{ image }}" alt="{{ image:alt }}" class="w-full h-48 object-cover rounded-md mb-6" />
+                  <div class="">
+                    <h3 class="mb-2 dark:text-darkText">
+                      {{ title }}
+                    </h3>
+                    <p class="dark:text-darkText dark:opacity-darkTextOpacity">
+                      {{ description }}
+                    </p>
+                  </div>
+                </div>
+                {{ if has_link }}
+                  <a href="{{ link }}" {{if target_blank}} target="_blank" {{/if}} class="btn-primary w-fit">
+                    {{ label }}
+                  </a>
+                {{ /if }}
+              </div>
+            </div>
+          {{ /features }}
+
+        </div>
+        {{# <!-- Pagination & Navigation -->
+        <div class="flex items-center px-5 md:hidden">
+          <!--Custom Pagination -->
+          <div class="custom-swiper-pagination"></div>
+
+          <!-- Custom navigation -->
+          <div class="container flex gap-4 justify-end items-center">
+            <div class="custom-button custom-prev">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="48" rx="24" fill="#F9FAFB" />
+                <path
+                  d="M27 32.67C26.81 32.67 26.62 32.6 26.47 32.45L19.95 25.93C18.89 24.87 18.89 23.13 19.95 22.07L26.47 15.55C26.76 15.26 27.24 15.26 27.53 15.55C27.82 15.84 27.82 16.32 27.53 16.61L21.01 23.13C20.53 23.61 20.53 24.39 21.01 24.87L27.53 31.39C27.82 31.68 27.82 32.16 27.53 32.45C27.38 32.59 27.19 32.67 27 32.67Z"
+                  fill="black" />
+              </svg>
+            </div>
+            <div class="custom-button custom-next">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="48" rx="24" fill="#1B8354" />
+                <path
+                  d="M20.9101 32.67C20.7201 32.67 20.5301 32.6 20.3801 32.45C20.0901 32.16 20.0901 31.68 20.3801 31.39L26.9001 24.87C27.3801 24.39 27.3801 23.61 26.9001 23.13L20.3801 16.61C20.0901 16.32 20.0901 15.84 20.3801 15.55C20.6701 15.26 21.1501 15.26 21.4401 15.55L27.9601 22.07C28.4701 22.58 28.7601 23.27 28.7601 24C28.7601 24.73 28.4801 25.42 27.9601 25.93L21.4401 32.45C21.2901 32.59 21.1001 32.67 20.9101 32.67Z"
+                  fill="white" />
+              </svg>
+            </div>
+          </div>
+        </div> #}}
+      </div>
+  </section>
+{{ /if }}

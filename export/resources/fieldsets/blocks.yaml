@@ -1,0 +1,658 @@
+title: 'Page Builder'
+fields:
+  -
+    handle: blocks
+    field:
+      collapse: accordion
+      display: Blocks
+      type: replicator
+      fullscreen: false
+      localizable: true
+      sets:
+        main:
+          display: Main
+          sets:
+            cta_section:
+              display: 'CTA Section'
+              icon: align-object-center
+              fields:
+                -
+                  import: cta_section
+            contact_section:
+              display: 'Contact Section'
+              icon: mail-sign-at
+              fields:
+                -
+                  import: contact_section
+            feature_multiple:
+              display: 'Feature Multiple'
+              icon: layout-display-split-quarters
+              fields:
+                -
+                  import: feature_multiple
+            feature_single:
+              display: 'Feature Single'
+              icon: layout-flip-left
+              fields:
+                -
+                  import: feature_single
+            hero:
+              display: Hero
+              icon: layout-split-verical
+              fields:
+                -
+                  import: hero
+            logo_cloud:
+              display: 'Logo Cloud'
+              icon: dashboard-layout
+              fields:
+                -
+                  import: logo_cloud
+            pricing_section:
+              display: 'Pricing Section'
+              icon: money-cashier-price-tag
+              fields:
+                -
+                  import: pricing_section
+            project_multiple:
+              display: 'Project Multiple'
+              icon: layout-grid-dots
+              fields:
+                -
+                  import: project_multiple
+            project_single:
+              display: 'Project Single'
+              icon: layout-split-right
+              fields:
+                -
+                  import: project_single
+            small_link:
+              display: 'Small Link'
+              icon: link
+              fields:
+                -
+                  import: small_link
+            social_media:
+              display: 'Social Media'
+              icon: globe-world-wide-web
+              fields:
+                -
+                  import: social_media
+            stats:
+              display: Stats
+              icon: addon-boxes-stack
+              fields:
+                -
+                  import: stats
+            steps:
+              display: Steps
+              icon: programming-script-code-brackets
+              fields:
+                -
+                  import: steps
+            team_section:
+              display: 'Team Section'
+              icon: id-face-scan
+              fields:
+                -
+                  import: team_section
+            testimonial:
+              display: Testimonial
+              icon: user-multiple
+              fields:
+                -
+                  import: testimonial
+            slider:
+              display: Slider
+              icon: layout-carousel-horizontal
+              fields:
+                -
+                  handle: slides
+                  field:
+                    type: replicator
+                    display: Slides
+                    localizable: true
+                    sets:
+                      set:
+                        display: Set
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                handle: title
+                                field:
+                                  type: text
+                                  display: Title
+                                  localizable: true
+                              -
+                                handle: description
+                                field:
+                                  type: textarea
+                                  display: Description
+                                  localizable: true
+                              -
+                                handle: background_image
+                                field:
+                                  max_files: 1
+                                  container: assets
+                                  type: assets
+                                  display: 'Background Image'
+                                  localizable: true
+                              -
+                                import: button
+                              -
+                                import: button
+                                prefix: second
+                              -
+                                handle: alignment
+                                field:
+                                  options:
+                                    -
+                                      key: Left
+                                      value: Left
+                                    -
+                                      key: Right
+                                      value: Right
+                                    -
+                                      key: Center
+                                      value: Center
+                                  type: select
+                                  display: Alignment
+                                  localizable: true
+            cards_slider:
+              display: 'Cards Slider'
+              icon: addon-boxes-stack
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                    localizable: true
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: true
+                -
+                  import: button
+                -
+                  handle: cards
+                  field:
+                    type: replicator
+                    display: Cards
+                    localizable: true
+                    sets:
+                      set:
+                        display: Set
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                handle: icon
+                                field:
+                                  max_files: 1
+                                  container: assets
+                                  type: assets
+                                  display: Icon
+                                  localizable: true
+                              -
+                                handle: title
+                                field:
+                                  type: text
+                                  display: Title
+                                  localizable: true
+                              -
+                                handle: description
+                                field:
+                                  type: textarea
+                                  display: Description
+                                  localizable: true
+                              -
+                                import: button
+                              -
+                                import: button
+                                prefix: second_
+                              -
+                                handle: tags
+                                field:
+                                  type: replicator
+                                  display: Tags
+                                  localizable: true
+                                  sets:
+                                    new_set_group:
+                                      display: 'New Set Group'
+                                      sets:
+                                        new_set:
+                                          display: 'New Set'
+                                          fields:
+                                            -
+                                              handle: title
+                                              field:
+                                                type: text
+                                                display: Title
+                                            -
+                                              handle: color
+                                              field:
+                                                default: '#ff0000'
+                                                type: color
+                                                display: Color
+                -
+                  handle: navigation_style
+                  field:
+                    options:
+                      -
+                        key: style1
+                        value: 'Style One'
+                      -
+                        key: style2
+                        value: 'Style Two'
+                    type: select
+                    display: 'Navigation Style'
+                    default: style1
+                    localizable: true
+            static_cards_section:
+              display: 'Static Cards'
+              icon: text-formatting-text-box-1
+              fields:
+                -
+                  handle: static_cards_title
+                  field:
+                    type: text
+                    display: Title
+                    localizable: true
+                -
+                  import: text_color
+                  prefix: title_
+                -
+                  import: text_color
+                  prefix: description_
+                -
+                  handle: static_cards
+                  field:
+                    type: replicator
+                    display: 'Static Cards'
+                    localizable: true
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                handle: icon
+                                field:
+                                  max_files: 1
+                                  container: assets
+                                  type: assets
+                                  display: Icon
+                                  localizable: true
+                              -
+                                handle: title
+                                field:
+                                  type: text
+                                  display: Title
+                                  localizable: true
+                              -
+                                handle: description
+                                field:
+                                  type: textarea
+                                  display: Description
+                                  localizable: true
+                              -
+                                handle: information
+                                field:
+                                  type: replicator
+                                  display: Information
+                                  localizable: true
+                                  sets:
+                                    new_set_group:
+                                      display: 'New Set Group'
+                                      sets:
+                                        new_set:
+                                          display: 'New Set'
+                                          fields:
+                                            -
+                                              handle: title
+                                              field:
+                                                type: text
+                                                display: Title
+                                                localizable: true
+                                            -
+                                              handle: details
+                                              field:
+                                                type: text
+                                                display: Details
+                                                localizable: true
+                              -
+                                import: button
+                              -
+                                import: background_color
+                                prefix: set_
+                -
+                  handle: divider_icon
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: 'Divider Icon'
+                    localizable: true
+                -
+                  import: background_color
+                  prefix: static_
+            heading_and_paragraph:
+              display: 'Heading and Paragraph'
+              icon: text-formatting-image-bottom
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Title
+                    localizable: true
+                -
+                  handle: paragraph
+                  field:
+                    type: textarea
+                    display: Description
+                    localizable: true
+                -
+                  import: tags
+                -
+                  import: button
+                -
+                  handle: toggle_extras
+                  field: button.toggle
+                  config:
+                    display: 'Toggle Additional Buttons'
+                -
+                  handle: buttons
+                  field:
+                    type: replicator
+                    display: Buttons
+                    if:
+                      toggle_extras: 'equals true'
+                    localizable: true
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                import: button
+            sidebar_content:
+              display: 'Sidebar Content'
+              icon: layout-header-sidebar-right
+              fields:
+                -
+                  handle: sections
+                  field:
+                    type: replicator
+                    display: Sections
+                    localizable: true
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                handle: subsections
+                                field:
+                                  type: replicator
+                                  display: Subsections
+                                  localizable: false
+                                  sets:
+                                    new_set_group:
+                                      display: 'New Set Group'
+                                      sets:
+                                        new_set:
+                                          display: 'New Set'
+                                          fields:
+                                            -
+                                              handle: icon
+                                              field:
+                                                max_files: 1
+                                                container: assets
+                                                type: assets
+                                                display: Icon
+                                                localizable: false
+                                            -
+                                              handle: title
+                                              field:
+                                                type: text
+                                                display: Title
+                                                localizable: false
+                                            -
+                                              handle: strong_title
+                                              field:
+                                                type: toggle
+                                                display: 'Strong Title'
+                                                localizable: false
+                                            -
+                                              handle: description
+                                              field:
+                                                type: text
+                                                display: Description
+                                                localizable: false
+                                            -
+                                              handle: inline
+                                              field:
+                                                type: toggle
+                                                display: 'Inline Title and Description'
+                                                localizable: false
+                                            -
+                                              import: button
+                                            -
+                                              handle: image_spacing
+                                              field:
+                                                options:
+                                                  -
+                                                    key: 1
+                                                    value: '1'
+                                                  -
+                                                    key: 2
+                                                    value: '2'
+                                                  -
+                                                    key: 3
+                                                    value: '3'
+                                                  -
+                                                    key: 4
+                                                    value: '4'
+                                                  -
+                                                    key: 5
+                                                    value: '5'
+                                                  -
+                                                    key: 6
+                                                    value: '6'
+                                                  -
+                                                    key: 7
+                                                    value: '7'
+                                                  -
+                                                    key: 8
+                                                    value: '8'
+                                                placeholder: '1'
+                                                max_items: 1
+                                                clearable: true
+                                                searchable: false
+                                                type: select
+                                                display: 'Image Spacing'
+                                                localizable: false
+                                            -
+                                              handle: image_and_links
+                                              field:
+                                                type: replicator
+                                                display: 'Image and Links'
+                                                localizable: false
+                                                sets:
+                                                  new_set_group:
+                                                    display: 'New Set Group'
+                                                    sets:
+                                                      new_set:
+                                                        display: 'New Set'
+                                                        fields:
+                                                          -
+                                                            handle: image
+                                                            field:
+                                                              max_files: 1
+                                                              container: assets
+                                                              type: assets
+                                                              display: Image
+                                                              localizable: false
+                                                          -
+                                                            handle: image_link
+                                                            field:
+                                                              type: link
+                                                              display: 'image Link'
+                                                              localizable: false
+            tab_section:
+              display: 'Tab Section'
+              icon: layout-table-column-insert
+              fields:
+                -
+                  handle: tabs
+                  field:
+                    type: replicator
+                    display: Tabs
+                    localizable: true
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                handle: tab_title
+                                field:
+                                  type: text
+                                  display: 'Tab Title'
+                              -
+                                handle: list
+                                field:
+                                  type: replicator
+                                  display: List
+                                  sets:
+                                    new_set_group:
+                                      display: 'New Set Group'
+                                      sets:
+                                        new_set:
+                                          display: 'New Set'
+                                          fields:
+                                            -
+                                              handle: list_content
+                                              field:
+                                                type: text
+                                                display: 'List Content'
+                              -
+                                handle: image
+                                field:
+                                  max_files: 1
+                                  container: assets
+                                  type: assets
+                                  display: Image
+                              -
+                                handle: video
+                                field:
+                                  max_files: 1
+                                  container: assets
+                                  type: assets
+                                  display: Video
+                              -
+                                handle: text
+                                field:
+                                  type: textarea
+                                  display: Text
+            logo_carousel:
+              display: 'Logo Carousel'
+              icon: addon-boxes-stack
+              fields:
+                -
+                  handle: logos
+                  field:
+                    type: replicator
+                    display: Logos
+                    localizable: true
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                handle: logo
+                                field:
+                                  max_files: 1
+                                  container: assets
+                                  type: assets
+                                  display: Logo
+            form:
+              display: Form
+              icon: text-formatting-type-cursor
+              fields:
+                -
+                  handle: is_contact_form
+                  field:
+                    type: toggle
+                    display: 'Contact Form?'
+                    localizable: true
+                -
+                  handle: select_form
+                  field:
+                    max_items: 1
+                    type: form
+                    display: 'Select Form'
+                    unless:
+                      is_contact_form: 'equals true'
+                    localizable: true
+            collection_list:
+              display: 'Collection List'
+              icon: media-news-paper
+              fields:
+                -
+                  handle: section_title
+                  field:
+                    type: text
+                    display: Title
+                    localizable: true
+                -
+                  import: button
+                  prefix: section_
+                -
+                  handle: selected_collection
+                  field:
+                    max_items: 1
+                    mode: select
+                    type: collections
+                    display: Collection
+                    localizable: true
+                -
+                  handle: related_taxonomy
+                  field:
+                    max_items: 1
+                    taxonomies:
+                      - sports
+                    type: terms
+                    display: 'Related Taxonomy'
+                    localizable: true
+                -
+                  handle: select_filter
+                  field:
+                    max_items: 1
+                    type: navs
+                    display: 'Select Filter'
+                    localizable: true
+            fixed_image:
+              display: 'Fixed Image'
+              icon: media-image-picture-gallery
+              fields:
+                -
+                  import: fixed_image

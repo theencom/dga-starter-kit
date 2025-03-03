@@ -1,0 +1,53 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: category
+            field:
+              options:
+                -
+                  key: Inquiry
+                  value: Inquiry
+                -
+                  key: Suggestion
+                  value: Suggestion
+                -
+                  key: Complaint
+                  value: Complaint
+              type: select
+              display: Category
+              localizable: true
+              placeholder: Category
+              validate:
+                - required
+          -
+            handle: full_name
+            field:
+              type: text
+              display: 'Full Name of the Talent'
+              localizable: true
+              placeholder: 'Full name'
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              input_type: email
+              type: text
+              display: Email
+              localizable: true
+              placeholder: Email
+              validate:
+                - required
+          -
+            handle: message
+            field:
+              type: textarea
+              display: Message
+              localizable: true
+              placeholder: Message
+              validate:
+                - required

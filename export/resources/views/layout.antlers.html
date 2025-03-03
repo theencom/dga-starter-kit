@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{{theme:favicon}}">
+    <meta property="og:image" content="{{image ?? seo_image ?? theme:og_image}}">
+    {{ seo_pro:meta }}
+    <title>{{ title ?? site:name }}</title>
+    {{ vite src="resources/js/site.js|resources/css/site.css" }}
+    
+
+    
+
+
+    {{# <link rel="stylesheet" media="all" href="https://muneer.cx/static/v1/css/muneer.min.css" /> #}}
+
+
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <link rel="stylesheet" href="css/search.css">
+
+
+
+    <!-- Matomo -->
+<script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//analytics.theen.com/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '9']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
+
+</head>
+<body class="debug-screens dark:bg-darkBg {{title | dashify}} transition-colors duration-1000 font-sans" id="themeRoot">
+    {{ partial:partials/navigation }}
+    <div class="" id="content">
+        {{ template_content }}
+    </div>
+    {{ partial:partials/footer }}
+
+    {{ partial:partials/fixed_buttons }}
+
+
+
+    <style>
+
+        {{theme:global_css}}
+
+        {{partial:partials/css}}
+    </style>
+
+
+    <script async src="https://cdn.userway.org/widget.js" data-account="OYNfpf6trA"></script>
+    <script async src="https://muneer.cx/v2/js/muneer.min.js?cid=88b47d08-64e1-45a2-9830-b534c983f798" async></script>
+
+
+    <script>
+        {{theme:global_javascript}}
+    </script>
+
+{{ vite src="resources/js/search.js" }}
+
+</body>
+</html>

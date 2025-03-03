@@ -1,0 +1,45 @@
+<!-- HEADING & PARAGRAPH SECTION -->
+    {{if heading}}
+    <section class="pt-6 dark:bg-darkBg dark:text-darkText">
+        <div class="container-custom">
+            {{ partial:partials/heading_paragraph }}
+        </div>
+    </section>
+    {{/if}}
+    {{ if static_cards }}
+        <!-- HELP & SUPPORT SECTION STARTS -->
+        <section class="pt-8 pb-10 {{if static_background_color}} bg-{{static_background_color}} {{else}} dark:bg-darkBg {{/if}}">
+            <div class="container-custom">
+                {{if static_cards_title}}
+                    <h2 class="mb-6 dark:text-{{title_text_color_dark}}">{{static_cards_title}}</h2>
+                {{/if}}
+                <div class="cards {{if divider_icon}} flex flex-col md:flex-row items-center justify-between {{else}} grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 {{/if}} gap-6">
+                    {{ static_cards }}
+                        <div
+                            class="card w-full md:min-h-[238px] lg:min-h-[192px] border border-[--border-primary-color] rounded-[--border-radius] p-4 flex flex-col content-between dark:bg-darkBgLight dark:text-darkText dark:border-darkBorderColor hover:bg-{{set_background_color}} dark:hover:bg-black  group">
+                            <div class="flex-1 mb-6">
+                                <div class="card-icon mb-6 {{if icon}} w-[3rem] h-[3rem] bg-gray-100 flex items-center justify-center rounded-full {{/if}}">{{if icon}} <img src="{{ icon }}" alt="Icon"> {{/if}}</div>
+                                <h3 class="mb-2 text-{{title_text_color_light}} dark:text-{{title_text_color_dark}} {{if set_background_color}} group-hover:!text-white {{/if}}">{{ title }}</h3>
+                                <p class="dark:opacity-darkTextOpacity text-{{description_text_color_light}} dark:text-{{description_text_color_dark}} {{if set_background_color}} group-hover:!text-white {{/if}}">{{ description }}</p>
+                                {{ information }}
+                                    <p class="mt-4"><strong class="text-{{title_text_color_light}} font-semibold dark:text-darkText {{if set_background_color}} group-hover:!text-white {{/if}}">{{ title }}</strong>
+                                        <span class="group-hover:!text-white">{{ details }}</span>
+                                    </p>
+                                {{ /information }}
+                            </div>
+                            {{ if toggle }}
+                                <a href="{{ link }}" {{if target_blank}} target="_blank" {{/if}}
+                                    class="btn-primary w-fit">
+                                    {{ label }}
+                                </a>
+                            {{ /if }}
+                        </div>
+                        {{if divider_icon}} <div class="divider-icon w-20 rotate-[90deg] md:rotate-0 my-8 md:my-0"><img src="{{ divider_icon }}" alt="Icon"></div> {{/if}}
+                    {{ /static_cards }}
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HELP & SUPPORT SECTION ENDS -->
+    {{ /if }}

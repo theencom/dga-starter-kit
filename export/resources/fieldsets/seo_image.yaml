@@ -1,0 +1,10 @@
+title: 'SEO Image'
+fields:
+  -
+    handle: seo_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'SEO Image'
+      localizable: false

@@ -1,0 +1,100 @@
+title: Stats
+fields:
+  -
+    handle: version
+    field:
+      options:
+        stats_section_1: 'Variant 1'
+        stats_section_2: 'Variant 2'
+        stats_section_3: 'Variant 3'
+        stats_section_4: 'Variant 4'
+        stats_section_5: 'Variant 5'
+        stats_section_6: 'Variant 6'
+        stats_section_7: 'Variant 7'
+      display: Variant
+      default: stats_section_1
+      type: button_group
+      instructions: 'Please select a stats variant'
+      validate:
+        - required
+      localizable: true
+  -
+    handle: title
+    field:
+      display: Title
+      type: text
+      localizable: true
+  -
+    handle: description
+    field:
+      display: Description
+      type: textarea
+      localizable: true
+  -
+    import: button
+  -
+    handle: stats
+    field:
+      collapse: accordion
+      display: Stats
+      type: replicator
+      validate:
+        - required
+      localizable: true
+      sets:
+        main:
+          display: Main
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: number
+                  field:
+                    display: Number
+                    type: text
+                    validate:
+                      - required
+                    localizable: true
+                -
+                  handle: description
+                  field:
+                    display: Description
+                    type: text
+                    localizable: true
+                -
+                  handle: has_icon
+                  field:
+                    display: 'Has Icon'
+                    type: toggle
+                    width: 50
+                    localizable: true
+                -
+                  handle: icon
+                  field:
+                    container: assets
+                    max_files: 1
+                    display: Icon
+                    type: assets
+                    width: 50
+                    validate:
+                      - 'required_if:has_icon,true'
+                    if:
+                      has_icon: 'equals true'
+                    localizable: true
+                -
+                  handle: dark_mode_icon
+                  field:
+                    container: assets
+                    max_files: 1
+                    display: 'Dark Mode Icon'
+                    type: assets
+                    width: 50
+                    validate:
+                      - 'required_if:has_icon,true'
+                    if:
+                      has_icon: 'equals true'
+                    localizable: true
+  -
+    import: background_color
+    prefix: stats_

@@ -1,0 +1,10 @@
+tree:
+  -
+    id: 5e7c4ff2-f18d-436c-a3e5-a7ccd76d1211
+    title: News
+  -
+    id: eb3767ac-4001-4827-8700-13c88a0af85d
+    title: Events
+  -
+    id: 8e749f99-6fc6-45e3-87c4-28bbafaafc36
+    title: Articles

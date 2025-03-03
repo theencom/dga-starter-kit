@@ -1,0 +1,83 @@
+<section class="py-10 dark:bg-darkBg">
+  <div class="container-custom">
+    <div class="flex items-center justify-between">
+      <h2 class="dark:text-white">{{ section_title }}</h2>
+      {{ if section_toggle }}
+        <a href="{{ section_link }}"
+          class="btn-secondary-outline dark:text-darkText dark:hover:bg-darkBgLight">{{ section_label }}</a>
+      {{ /if }}
+    </div>
+    <div class="swiper articles-slider mt-8">
+      <div class="swiper-wrapper mb-6 md:mb-0">
+        {{ collection from="{collection}" }}
+          <div
+            class="swiper-slide h-auto {{if collection == "videos"}} {{else}} md:!h-[28.625rem] {{/if}} border border-[--border-primary-color] rounded-[--border-radius] bg-white dark:bg-darkBgLight dark:border-darkBorderColor p-4">
+            <div class="flex flex-col justify-between h-full overflow-hidden">
+              <div class="flex-1 {{if collection != "videos"}} mb-6 {{/if}}">
+                <div class="relative h-fit">
+                  <img src="{{ image }}" alt="{{ image:alt }}" class="w-full h-48 object-cover rounded-md mb-6" style="{{if image_position}} object-position:{{image_position}}; {{/if}}"  />
+                  {{ if collection == "videos" }}
+                    <svg data-video-url="{{ video_link }}" width="45" height="45" viewBox="0 0 45 45" fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="video-popup-trigger absolute bottom-1/2 right-1/2 transform translate-x-1/2 translate-y-1/2 cursor-pointer">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M22.1641 44.9004C34.2949 44.9004 44.1289 35.0664 44.1289 22.9355C44.1289 10.8047 34.2949 0.970703 22.1641 0.970703C10.0332 0.970703 0.199219 10.8047 0.199219 22.9355C0.199219 35.0664 10.0332 44.9004 22.1641 44.9004ZM17.9266 15.0638C17.5958 14.8553 17.1645 15.09 17.16 15.481L17.0729 23.01L17.16 30.5391C17.1645 30.9301 17.5958 31.1648 17.9266 30.9564L29.8632 23.4337C30.1744 23.2376 30.1744 22.7839 29.8632 22.5877L17.9266 15.0638Z"
+                        fill="white" fill-opacity="0.5" />
+                    </svg>
+                  {{ /if }}
+                </div>
+                {{if collection != "videos"}}
+                  {{partial:partials/date_partial}}
+                {{/if}}
+                <h3 class="mb-2 dark:text-darkText">
+                  {{ title | safe_truncate(60, '...') }}
+                </h3>
+                {{ if collection == "videos" }}
+                {{ else }}
+                  <div class="">
+                    <p class="dark:text-darkText dark:opacity-darkTextOpacity">
+                      {{ content | strip_tags | safe_truncate(80, '...') }}
+                    </p>
+                  </div>
+                {{ /if }}
+              </div>
+              {{ if collection == "videos" }}
+              {{ else }}
+                <a href="{{ url }}" target="_blank" class="btn-primary w-fit">
+                  اقرأ المزيد
+                </a>
+              {{ /if }}
+            </div>
+          </div>
+        {{ /collection }}
+
+      </div>
+      {{#
+        <!-- Pagination & Navigation -->
+        <div class="flex items-center px-5 md:hidden">
+          <!--Custom Pagination -->
+          <div class="custom-swiper-pagination"></div>
+        
+          <!-- Custom navigation -->
+          <div class="container flex gap-4 justify-end items-center">
+            <div class="custom-button custom-prev">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="48" rx="24" fill="#F9FAFB" />
+                <path
+                  d="M27 32.67C26.81 32.67 26.62 32.6 26.47 32.45L19.95 25.93C18.89 24.87 18.89 23.13 19.95 22.07L26.47 15.55C26.76 15.26 27.24 15.26 27.53 15.55C27.82 15.84 27.82 16.32 27.53 16.61L21.01 23.13C20.53 23.61 20.53 24.39 21.01 24.87L27.53 31.39C27.82 31.68 27.82 32.16 27.53 32.45C27.38 32.59 27.19 32.67 27 32.67Z"
+                  fill="black" />
+              </svg>
+            </div>
+            <div class="custom-button custom-next">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="48" rx="24" fill="#1B8354" />
+                <path
+                  d="M20.9101 32.67C20.7201 32.67 20.5301 32.6 20.3801 32.45C20.0901 32.16 20.0901 31.68 20.3801 31.39L26.9001 24.87C27.3801 24.39 27.3801 23.61 26.9001 23.13L20.3801 16.61C20.0901 16.32 20.0901 15.84 20.3801 15.55C20.6701 15.26 21.1501 15.26 21.4401 15.55L27.9601 22.07C28.4701 22.58 28.7601 23.27 28.7601 24C28.7601 24.73 28.4801 25.42 27.9601 25.93L21.4401 32.45C21.2901 32.59 21.1001 32.67 20.9101 32.67Z"
+                  fill="white" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      #}}
+    </div>
+</section>

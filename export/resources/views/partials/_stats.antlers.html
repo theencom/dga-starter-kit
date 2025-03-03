@@ -1,0 +1,41 @@
+{{if stats}}
+ <!-- ABOUT SECTION STARTS -->
+ 
+   
+    <div class="container-custom">
+      <div class="flex items-center justify-between">
+        <h2 class="">{{title}}</h2>
+        {{if toggle}}
+      <a href="{{link}}" class="btn-secondary-outline dark:hover:bg-darkBgLight dark:text-darkText">
+        <span>{{label}}</span>
+      </a>
+      {{/if}}
+      </div>
+      
+      <p class="mt-6 w-full sm:w-[70%] dark:opacity-darkTextOpacity">
+        {{description}}
+      </p>
+    </div>
+  
+
+    <div class="container-custom !py-8 flex flex-wrap md:flex-nowrap items-center md:justify-center gap-4 sm:gap-4">
+        {{stats}}
+        <div class="flex flex-col items-start py-4 px-4 rounded-2xl">
+          {{if has_icon}}
+          <div class="icon-wrapper w-12 h-12 rounded-full flex items-center justify-center bg-gray-50">
+            <img src="{{icon}}" alt="Icon" class="{{if dark_mode_icon}}dark:hidden{{/if}} w-8" />
+            <img src="{{dark_mode_icon}}" alt="Icon" class="hidden  {{if dark_mode_icon}}dark:block{{/if}} w-8" />
+          </div>
+          {{/if}}
+          <p class=" dark:text-white text-3xl leading-[-2%] mt-6 mb-2 primaryText">
+            {{number}}
+          </p>
+          <p class="dark:text-darkText opacity-darkTextOpacity w-full">{{description}}</p>
+        </div>
+        {{/stats}}
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION ENDS -->
+
+  {{/if}}

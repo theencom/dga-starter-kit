@@ -1,0 +1,51 @@
+      {{ right_side }}
+          {{ blocks }}
+              <div
+                  class="right-side self-start mt-[-1rem] bg-white border border-[--border-primary-color] rounded-[--border-radius] w-full md:w-[40%] p-10 dark:bg-darkBgLight">
+                  {{ sections }}
+                      <div class="right-side_top border-b border-[#D2D6DB] space-y-4 py-6">
+                          {{ subsections }}
+                              <div class="flex items-start gap-2">
+                                  {{ if icon }}
+                                      <img src="{{ icon }}" alt="Icon" class="mt-1.5 w-5" />
+                                  {{ /if }}
+                                  <div class="space-y-1">
+                                      <div class="{{if inline}} flex items-center gap-1 {{/if}}">
+                                          <p class="font-bold {{if strong_title}}text-[1.1rem]{{/if}}">
+                                              {{ title }}
+                                          </p>
+                                          <p class="dark:text-darkText dark:opacity-darkTextOpacity">{{ description }}</p>
+                                          {{ if toggle }}
+                                              <a href="{{if link_type=="phone"}} tel:+{{ label }} {{else}}{{ link }}{{/if}} {{if link_type=="email"}} mailto:{{ label }} {{else}}{{ link }}{{/if}}"
+                                                  class="{{if button_variant == "white"}} font-medium bg-[#F3F4F6] dark:bg-[gray] h-[40px] px-4 rounded-[4px] flex items-center justify-center  hover:bg-[#E5E7EB] active:bg-[#E5E7EB] {{else}} group hover:underline text-[#1B8354] hover:text-[#54C08A] active:text-[#88D8AD] visited:text-[#14573A] inline-flex items-center gap-2{{/if}}"><span>{{ label }}</span>
+                                                  <svg class="inline-flex w-4 group-hover:text-[#54C08A] {{if button_variant == "white"}} hidden {{/if}}"
+                                                      width="18" height="17" viewBox="0 0 18 17" fill="currentColor"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                                                      <path
+                                                          d="M8.9991 16.5295H9C12.7033 16.5295 14.5617 16.5295 15.8433 15.2479C17.055 14.0346 17.1175 12.2337 17.1233 9.15536C17.1233 8.81035 16.8442 8.52954 16.4992 8.52954H16.4975C16.1525 8.52954 15.8725 8.80873 15.8725 9.15373C15.8667 12.1462 15.7792 13.5437 14.9583 14.3645C14.0425 15.2795 12.3575 15.2795 8.99919 15.2795C5.64085 15.2795 3.955 15.2795 3.04 14.3645C2.125 13.4487 2.125 11.7629 2.125 8.40456C2.125 5.04622 2.12502 3.36041 3.04085 2.44458C3.86085 1.62375 5.25831 1.53537 8.25081 1.52954C8.59665 1.52954 8.875 1.24873 8.875 0.903727C8.87417 0.558727 8.595 0.279541 8.25 0.279541H8.24833C5.16916 0.285374 3.36832 0.347865 2.15666 1.5612C0.875 2.84202 0.875 4.70118 0.875 8.40445C0.875 12.1077 0.875 13.9662 2.15666 15.2479C3.43748 16.5295 5.29666 16.5295 8.9991 16.5295Z"
+                                                          fill="currentColor" />
+                                                      <path
+                                                          d="M7.76675 9.72963C7.88925 9.85047 8.04841 9.91127 8.20758 9.91127C8.36842 9.91127 8.5284 9.8488 8.6509 9.7263L15.8001 2.53546C15.8492 3.04046 15.8876 3.83797 15.8701 5.0838C15.8651 5.42963 16.1409 5.71291 16.4859 5.71791C16.8326 5.72625 17.1151 5.44711 17.1201 5.10211C17.1717 1.47779 16.7821 1.08661 16.5728 0.876543C16.3628 0.666509 15.9718 0.275471 12.3501 0.327126C12.0051 0.332126 11.7292 0.616241 11.7342 0.961241C11.7392 1.30291 12.0184 1.57713 12.3592 1.57713H12.3684C13.6192 1.55963 14.4175 1.59793 14.9209 1.64793L7.76422 8.84544C7.52089 9.09044 7.52175 9.4863 7.76675 9.72963Z"
+                                                          fill="currentColor" />
+                                                  </svg>
+                                              </a>
+                                          {{ /if }}
+                                      </div>
+                                      {{ if image_and_links }}
+                                          <div class="flex items-center gap-{{image_spacing}} flex-wrap">
+                                              {{ image_and_links }}
+                                              <a href="{{image_link}}">
+                                                <img src="{{ image }}" alt="Icon" class="inline-flex" />
+                                              </a>
+                                                  
+                                              {{ /image_and_links }}
+                                          </div>
+                                      {{ /if }}
+                                  </div>
+                              </div>
+                          {{ /subsections }}
+                      </div>
+                  {{ /sections }}
+              </div>
+          {{ /blocks }}
+      {{ /right_side }}

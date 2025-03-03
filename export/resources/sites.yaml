@@ -1,0 +1,10 @@
+english:
+  name: En
+  url: /
+  locale: en_US
+  lang: english
+arabic:
+  name: Ar
+  url: /ar
+  locale: ar
+  lang: ar

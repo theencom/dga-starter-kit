@@ -1,0 +1,19 @@
+sections:
+  -
+    id: m3ofhxun
+    title: Overview
+    navigation: footer_navigation_1
+    type: new_set
+    enabled: true
+  -
+    id: m3ofj239
+    title: 'Important Links'
+    navigation: footer_navigation_2
+    type: new_set
+    enabled: true
+  -
+    id: m3ofj7nh
+    title: 'Contact & Support'
+    navigation: footer_navigation_3
+    type: new_set
+    enabled: true

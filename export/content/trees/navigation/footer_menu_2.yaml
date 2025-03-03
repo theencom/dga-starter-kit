@@ -1,0 +1,21 @@
+tree:
+  -
+    id: 4e3b53d6-fba5-4337-8e5c-382c48e55cd5
+    title: 'National service portal'
+    url: '#'
+  -
+    id: 4f32b55e-fb89-47b8-a600-6d474ae53273
+    title: 'Open government data'
+    url: '#'
+  -
+    id: efb9f4b6-8429-4424-a617-e99b1f06db63
+    title: 'National strategy for data & Artificial intelligence'
+    url: '#'
+  -
+    id: 439ffcf1-8765-403b-8e87-78da5c12a056
+    title: 'Open data portal'
+    url: '#'
+  -
+    id: 43b25aef-4665-420b-bfec-dc385a767629
+    title: 'E-Participation portal'
+    url: '#'

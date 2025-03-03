@@ -1,0 +1,165 @@
+title: الفعاليات
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: true
+              validate:
+                - required
+              display: العنوان
+          -
+            handle: select_sport
+            field:
+              options:
+                -
+                  key: Football
+                  value: Football
+                -
+                  key: Handball
+                  value: Handball
+                -
+                  key: Judo
+                  value: Judo
+                -
+                  key: Taekwondo
+                  value: Taekwondo
+                -
+                  key: Athletics
+                  value: Athletics
+              type: select
+              display: 'Select Sport'
+              localizable: true
+          -
+            handle: image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: الصورة
+              localizable: true
+          -
+            handle: age
+            field:
+              type: text
+              display: العمر
+              localizable: true
+          -
+            handle: gender
+            field:
+              options:
+                ذكر: male
+                انثى: female
+                'ذكر و أنثى': male_female
+              max_items: 1
+              type: select
+              display: الجنس
+              localizable: true
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              localizable: true
+              max_items: 1
+          -
+            handle: register_page
+            field:
+              type: link
+              display: 'Register Page'
+              localizable: true
+              collections:
+                - pages
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+              show_regenerate: true
+          -
+            handle: popup
+            field:
+              type: toggle
+              display: Popup
+              localizable: true
+              default: true
+          -
+            handle: start_date
+            field:
+              time_enabled: true
+              type: date
+              display: 'Start date'
+              localizable: true
+          -
+            handle: end_date
+            field:
+              time_enabled: true
+              type: date
+              display: 'End date'
+              localizable: true
+              validate:
+                - required
+          -
+            handle: yearly
+            field:
+              options:
+                Annually: Annually
+                None: None
+              type: select
+              display: Yearly
+              localizable: true
+          -
+            handle: city
+            field:
+              type: text
+              display: City
+              localizable: true
+          -
+            handle: map_link
+            field:
+              type: link
+              display: 'Map Link'
+              localizable: true
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              localizable: true
+              validate:
+                - required
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - events
+              max_items: 1
+              listable: false
+              localizable: true
+  SEO:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            handle: seo
+            field:
+              type: seo_pro
+              listable: false
+              display: SEO
+              localizable: true

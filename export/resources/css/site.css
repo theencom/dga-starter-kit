@@ -1,0 +1,839 @@
+/* @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"); */
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* This is all you. */
+
+
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src:url("/public/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic.ttf") format('truetype'),
+    url("/public/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic.woff") format('woff'), 
+    url('/public/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic.woff2') format('woff2');
+    
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url("/public/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic-medium.ttf") format('truetype'),
+    url("/public/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic-medium.woff") format('woff'), 
+    url('/public/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic-medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url("/public/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic-semibold.ttf") format('truetype'),
+    url("/public/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic-semibold.woff") format('woff'),
+    url('/public/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic-semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url("/public/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic-bold.ttf") format('truetype'),
+    url("/public/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic-bold.woff") format('woff'),
+    url('/public/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+
+:root {
+    --font-size-base: 1rem;
+
+    --text-default-color: #161616;
+    --primary-color: #1b8354;
+
+    --border-primary-color: #d2d6db;
+    --border-radius: 16px;
+
+    --button-primary-color: #1b8354;
+    --button-primary-text-color: #ffffff;
+    --button-primary-hover: #166a45;
+    --button-secondary-outline-color: #d2d6db;
+    --button-secondary-color: #d2d6db;
+    --button-secondary-hover: #f3f4f6;
+    --button-secondary-border-hover: #e5e7eb;
+    --button-active-color: #104631;
+    --button-border-radius: 4px;
+    --button-padding-block: 0.5rem;
+    --button-padding-inline: 1rem;
+    --button-text-color: #ffffff;
+    --button-secondary-text-color: #161616;
+
+    --contact-form-bg: #f3f4f6;
+    --contact-form-text: #6c737f;
+    --form-input-radius: 4px;
+    --form-padding-block: 0.5rem;
+    --form-padding-inline: 0.5rem;
+}
+body {
+    color: var(--text-default-color);
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+h1 {
+    font-size: 3.75rem !important;
+    font-weight: 600 !important;
+    line-height: 4.5rem !important;
+    letter-spacing: -2% !important;
+}
+h2 {
+    font-size: 1.875rem !important;
+    font-weight: 700 !important;
+    line-height: 2.375rem !important;
+    letter-spacing: 0% !important;
+}
+h3 {
+    font-size: 1.125rem !important;
+    font-weight: 700 !important;
+    line-height: 1.75rem !important;
+    letter-spacing: 0% !important;
+}
+
+.container-custom {
+    width: 90%;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+
+
+.swiper-slide-bg {
+    background-image: none;
+}
+
+.swiper-slide-bg.lazyloaded {
+    background-image: url('/assets/homehero15x-webp.webp');
+}
+
+
+
+/*********** CUSTOM CHECKBOX & RADIO INPUT STYLES STARTS ***********/
+/* Custom checkbox styles */
+input[type="checkbox"] {
+    appearance: none;
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 1px solid #6c737f;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+input[type="checkbox"]:checked {
+    background-color: #1b8354;
+    border: none;
+}
+
+input[type="checkbox"]:checked::before {
+    content: url("/public/assets/icons/checked-icon.svg");
+}
+
+/* Custom radio button styles */
+input[type="radio"] {
+    appearance: none;
+    border-radius: 50%;
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 1px solid #6c737f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+input[type="radio"]:checked {
+    border-color: #1b8354;
+}
+input[type="radio"]:checked::before {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background-color: #1b8354;
+    border-radius: 50%;
+}
+/*********** CUSTOM CHECKBOX & RADIO INPUT STYLES ENDS ***********/
+
+/********** Reusable Input focus styles **********/
+/* coming soon */
+
+/*********** HEADER STYLES STARTS  ************/
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+
+
+/* Show mega-menu when hovering over menu item */
+.services_menu_item:hover ~ .mega-menu {
+    display: block;
+}
+
+/* This is Mobile menu custom CSS for the ::after pseudo-element */
+
+.mobile-menu-link.activated {
+    color: #1b8354;
+    position: relative;
+}
+.mobile-menu-link.activated::after {
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    width: 6px;
+    height: 24px;
+    border-radius: 9999px;
+    background-color: #1b8354; /* Selected state color */
+}
+
+.mobile-sub-menu-link::before {
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    width: 6px;
+    height: 24px;
+    border-radius: 9999px;
+    background-color: transparent;
+}
+.mobile-sub-menu-link:hover::before {
+    background-color: #9da4ae;
+}
+.mobile-sub-menu-link:active::before {
+    background-color: #1f2a37;
+}
+
+
+/** Search box Input focus styles **/
+.search_input_wrapper {
+    position: relative;
+    overflow: hidden; /* Ensures the animated line does not overflow */
+    border-radius: 4px; /* Match the border radius of the input */
+}
+
+.animated_line-search-bar {
+    position: absolute;
+    bottom: 0; /* Align with the bottom of the input field */
+    left: 0;
+    width: 100%; /* Matches the input width */
+    height: 2px; /* Thickness of the line */
+    background-color: #161616; /* Line color */
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transform: scaleX(0); /* Hidden by default */
+    transform-origin: center; /* Expand from center */
+    transition: transform 0.3s ease-in-out; /* Smooth animation */
+}
+.search_input:focus {
+    outline: none;
+}
+.search_input:focus + .animated_line-search-bar {
+    transform: scaleX(1); /* Expand when focused */
+}
+
+.search-container {
+    position: relative;
+    width: 100% !important; /* Adjust width as needed */
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 8px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-btn {
+    background-color: #008000; /* Green button */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#search-input {
+    flex: 1;
+    margin: 0px 0px !important;
+    padding: 12px 35px !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.results-container {
+    display: none; /* Initially hide the dropdown */
+    position: absolute;
+    top: 100%; /* Position it below the search bar */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-height: 300px; /* Set a max height */
+    overflow-y: auto; /* Enable scrolling */
+    z-index: 1000;
+}
+
+.results-container.show {
+    display: block; /* Show when triggered */
+
+    padding: 10px;
+    border-radius: 7px;
+}
+
+#search-result-child {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#search-result-child li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+#search-result-child li:hover {
+    background-color: #f0f0f0;
+}
+
+#search-result-child li h3 {
+    font-size: 16px !important;
+}
+*/
+/*********** HEADER STYLES ENDS  ************/
+
+/************ HERO SECTION STYLES STARTS ************/
+.hero-slider .swiper-pagination-bullet {
+    background-color: #e5e7eb !important;
+    opacity: 0.5 !important;
+    width: 16px;
+    height: 16px;
+}
+.hero-slider .swiper-pagination-bullet-active {
+    background-color: #1b8354 !important;
+    opacity: 1;
+    width: 16px;
+    height: 16px;
+}
+
+.hero-slider .swiper-slide {
+    transition: opacity 1s ease-in-out;
+}
+
+@media only screen and (max-width: 640px) {
+    .hero_slider_heading {
+        font-size: 2rem !important;
+        line-height: 2.75rem !important;
+    }
+}
+/************ HERO SECTION STYLES ENDS ************/
+
+/************ SERVICES PAGE STYLES STARTS ************/
+/* Left side styles */
+.list-decimal li {
+    list-style: decimal;
+}
+@media only screen and (max-width: 417px) {
+    .left-side_headingBtn {
+        margin-bottom: 1rem;
+    }
+}
+/************ SERVICES PAGE STYLES ENDS ************/
+
+.light-green {
+    background-color: #f3fcf6;
+}
+.custom-pagination-bullet {
+    width: 16px !important;
+    height: 16px !important;
+    background-color: #e5e7eb !important;
+    border-radius: 50% !important;
+    opacity: 1 !important;
+    transition: background-color 0.3s !important;
+}
+.custom-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #1b8354 !important; /* Active state color */
+}
+
+.breadcrumb li::after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("/public/assets/icons/arrow-right-s-line.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 0.3125rem;
+    margin-right: 0.3125rem;
+}
+
+.breadcrumb li:last-child::after {
+    content: ""; /* Remove the arrow for the last item */
+    background: none;
+}
+.breadcrumb li:last-child a {
+    color: #9da4ae;
+    pointer-events: none;
+    text-decoration: none;
+}
+
+/* Tab styles of services page */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+#tab-steps {
+    position: relative;
+}
+.tab-content-style::after {
+    position: absolute;
+    content: "";
+    background-color: #1b8354;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    border-radius: 3px;
+}
+
+/************ FEEDBACK SECTION STYLES STARTS ************/
+.feedback-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center; /* Ensures proper alignment */
+    justify-content: center;
+    overflow: hidden; /* Ensures the animated line does not overflow */
+    border-radius: 4px; /* Match the border radius of the input */
+}
+
+.feedback-input-field {
+    outline: none;
+    padding-bottom: 2px; /* Optional: Adjust as needed for spacing */
+}
+
+.feedback-animated-line {
+    position: absolute;
+    bottom: 0; /* Align with the bottom of the input field */
+    left: 0; /* Starts at the left edge */
+    width: 100%; /* Matches the width of the textarea */
+    height: 2px; /* Thickness of the line */
+    background-color: #161616;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transform: scaleX(0); /* Hidden by default */
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feedback-input-field:focus + .feedback-animated-line {
+    transform: scaleX(1); /* Expand when focused */
+}
+/************ FEEDBACK SECTION STYLES ENDS ************/
+
+/************ FOOTER SECTION STYLES STARTS ************/
+.footer_section_heading:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px; /* Adjust thickness as needed */
+    background-color: #fff;
+    opacity: 0.5;
+}
+
+@media only screen and (max-width: 640px) {
+    footer > .container-custom {
+        width: 90% !important;
+    }
+}
+/************ FOOTER SECTION STYLES ENDS ************/
+
+/* Secondary Header transcribe animation styles */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.transcribe.active {
+    animation: blink 1s infinite;
+}
+
+/* Custom magnifier cursor */
+.magnifier-mode {
+    cursor: zoom-in;
+}
+
+/* Class for magnified text */
+.magnified {
+    transform: scale(2);
+    transform-origin: left center;
+    display: inline-block;
+    position: relative;
+    z-index: 100;
+    background: white; /* Optional: ensures text is readable when magnified */
+    transition: transform 0.2s ease;
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+/* button {
+    position: relative;
+  }
+
+button[title]:hover:after {
+    content: attr(title);
+    position: absolute;
+    background-color:#1F2A37;
+    color:white;
+    font-size: 12px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 10px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  } */
+
+.hero-slider .swiper-pagination-bullet:last-of-type {
+    display: none !important;
+}
+
+.divider-icon:last-of-type {
+    display: none !important;
+}
+
+:root {
+    --text-default-color: #161616;
+    --primary-color: #1b8354;
+
+    --border-primary-color: #d2d6db;
+    --border-radius: 12px;
+
+    --button-primary-color: #1b8354;
+    --button-primary-hover: #166a45;
+    --button-secondary-color: #d2d6db;
+    --button-secondary-hover: #f3f4f6;
+    --button-secondary-border-hover: #e5e7eb;
+    --button-active-color: #104631;
+    --button-border-radius: 4px;
+    --button-padding-block: 0.5rem;
+    --button-padding-inline: 0.75rem;
+    --button-text-color: #ffffff;
+    --button-secondary-text-color: #161616;
+
+    --contact-form-bg: #f3f4f6;
+    --contact-form-text: #6c737f;
+    --form-input-radius: 4px;
+    --form-padding-block: 0.5rem;
+    --form-padding-inline: 0.5rem;
+}
+
+/********** Reusable Input focus styles **********/
+.input-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 4px;
+}
+
+.input-field {
+    outline: none;
+    width: 100%;
+    border-radius: 4px;
+    padding-left: 8px;
+    padding-right: 16px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.animated-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #161616;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.input-field:focus {
+    outline: none;
+}
+
+.input-field:focus + .animated-line {
+    transform: scaleX(1);
+}
+
+.input-field:not(textarea) {
+    height: 40px;
+}
+
+/********** Category input Styles ***********/
+.select2-container {
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #f3f4f6;
+    /* Matches your input background */
+    border-radius: 4px;
+    /* Matches rounded corners */
+    padding-inline: 1rem !important;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    border: 1px solid transparent;
+    color: #6c737f;
+}
+
+.select2-container--default .select2-selection--single:hover {
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding: 0;
+}
+
+#country-code
+    + .select2-container
+    .select2-selection--single
+    .select2-selection__rendered {
+    color: #161616;
+}
+
+#country-code + .select2-container--default .select2-selection--single {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.select2-container--default.select2-container--open.select2-container--below
+    .select2-selection--single,
+.select2-container--default.select2-container--open.select2-container--below
+    .select2-selection--multiple {
+    border-radius: 4px;
+}
+
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__rendered {
+    color: #6c737f;
+}
+
+/* Placeholder Text Styling */
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__placeholder {
+    color: #6c737f;
+    /* Gray placeholder text */
+}
+
+/* Dropdown Menu Styling */
+.select2-dropdown.custom-dropdown {
+    border: 1px solid #d2d6db;
+    /* Matches dropdown border */
+    margin-top: 8px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    background-color: #ffffff;
+}
+
+.select2-results__option {
+    padding: 8px !important;
+    font-size: 14px;
+    color: #374151;
+    /* Text color */
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.select2-results__option--hover,
+.select2-results__option--highlighted {
+    background-color: #f3f4f6 !important;
+    /* Hover background */
+    color: #1f2937 !important;
+    /* Text color on hover */
+}
+
+/* Dropdown Open Arrow Rotation */
+.select2-container--default.select2-container--open .select2-selection--single {
+    border-radius: 4px;
+}
+
+/* Custom arrow styling */
+.custom-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+    pointer-events: none;
+    /* Ensure it doesn’t block clicks */
+}
+
+/* Rotate on dropdown open */
+.custom-arrow.rotate {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Position adjustment for the Select2 container */
+.select2-container--default .select2-selection--single {
+    position: relative;
+    padding-right: 40px;
+    /* Add space for custom arrow */
+}
+
+.select2-selection__arrow {
+    display: none !important;
+    /* Hide the default Select2 arrow */
+}
+
+/********* File Input Styles  ***********/
+/* Hide the default file input */
+input[type="file"].hidden {
+    display: none;
+}
+
+.file-input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-label {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding-inline: 0.75rem;
+    height: 32px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid #d2d6db;
+    border-radius: 4px;
+    color: #161616;
+    cursor: pointer;
+    position: relative;
+    background-color: #f9fafb;
+}
+
+.file-label:hover {
+    border-color: #e5e7eb;
+    background-color: #f3f4f6;
+}
+
+select {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0 5px 0 5px;
+}
+
+.file-text {
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+}
+
+.progress-circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top-color: #161616;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.close-btn {
+    cursor: pointer;
+    margin-left: auto;
+    background: none;
+    border: none;
+    display: none;
+}
+
+/* Link hover styles */
+.right_side_links:hover {
+    color: #54c08a;
+    text-decoration: underline;
+}
+
+.right_side_links:hover .copy-icon {
+    content: url("/icons/copy-01-hovered.svg");
+}
+
+.right_side_links_location:hover .copy-icon {
+    content: url("/icons/link-icon-hovered.svg");
+}
+
+.userway_buttons_wrapper {
+    left: 63px !important;
+    bottom: 120px !important;
+}
+
+#muneer-trigger-button {
+    height: 40px;
+    width: 40px;
+    flex-direction: column;
+    margin-left: 8px;
+}
+
+span.muneer-trigger-button-icon {
+    margin-top: -10px;
+}
+
+

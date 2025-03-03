@@ -1,0 +1,127 @@
+{{ if cards }}
+    <!-- SERVICES SECTION STARTS -->
+    <section class="py-10 bg-[#F9FAFB] dark:bg-darkBg">
+        <div class="container-custom">
+            <div class="flex items-center justify-between dark:text-darkText">
+                <h2 class="">{{ title }}</h2>
+                {{ if toggle }}
+                    <a href="{{ link }}" {{if target_blank}} target="_blank" {{/if}}
+                        class="btn-secondary-outline dark:text-darkText dark:hover:bg-darkBgLight">
+                        {{ label }}
+                    </a>
+                {{ /if }}
+            </div>
+            <p class="mt-6 w-full sm:w-[70%] dark:text-darkText dark:opacity-darkTextOpacity">
+                {{ description }}
+            </p>
+        </div>
+
+
+        <div class="swiper service-slider mt-8 w-full">
+            <div class="swiper-wrapper mb-6">
+                <!-- Card -->
+                {{ cards }}
+                    <div
+                        class="swiper-slide h-auto border border-[--border-primary-color] rounded-[--border-radius] bg-white p-4 dark:bg-darkBgLight dark:border-darkBorderColor">
+                        <div class="card flex flex-col justify-between h-full dark:text-darkText">
+                            <div class="flex-1">
+                                <div class="card-icon w-10 mb-6">
+                                    {{ if icon }}
+                                        <div
+                                            class="bg-green-50 bg-opacity-50 rounded-full flex items-center justify-center h-12 w-12">
+                                            <img src="{{ icon }}" alt="Icon" class="w-full h-[22px]" />
+                                        </div>
+
+                                        {{ else }}
+
+                                        <img src="/assets/icons/tick-bg.svg" alt="Icon" class="w-full dark:hidden" />
+                                        <img src="/assets/icons/tick-icon-dark.svg" alt="Icon" class="w-full hidden dark:block" />
+                                    {{ /if }}
+                                </div>
+                                <h3 class="card-title mb-2">{{ title }}</h3>
+                                <p class="card-content mb-6 dark:opacity-darkTextOpacity">
+                                    {{ description }}
+                                </p>
+                            </div>
+
+
+                            <!-- Card tags -->
+                            {{ if tags }}
+                                <div class="tags text-xs leading-[1.124rem] font-medium flex items-center gap-2 mb-6">
+                                    {{ tags }}
+                                        <div
+                                            class="tag h-[24px] px-2 flex items-center justify-center rounded-[4px] border border-[{{ color }}]  bg-[{{ color }}] bg-opacity-90 text-[{{ color }}]">
+                                            {{ title }}
+                                        </div>
+                                    {{ /tags }}
+                                </div>
+                            {{ /if }}
+                            <!-- Card action buttons -->
+                            <div class="flex items-center gap-4">
+                                {{ if toggle }}
+                                    <a href="{{ link }}" {{if target_blank}} target="_blank" {{/if}}
+                                        class="btn-secondary-outline dark:text-darkText dark:hover:bg-darkBgLight dark:hover:opacity-[0.6]">
+                                        {{ label }}
+                                    </a>
+                                {{ /if }}
+                                {{ if second_toggle }}
+                                    <a href="{{ second_link }}" {{if target_blank}} target="_blank" {{/if}}
+                                        class="btn-primary">
+                                        {{ second_label }}
+                                    </a>
+                                {{ /if }}
+                            </div>
+                        </div>
+                    </div>
+                {{ /cards }}
+            </div>
+            <!-- Basic Navigation -->
+            {{ if navigation_style == "style1" }}
+                <div class="services-swiper-pagination"></div>
+            {{ /if }}
+            <!-- Basic Navigation -->
+
+
+            <!-- Custom Navigation -->
+            {{ if navigation_style == "style2" }}
+                <div class="flex items-center container-custom px-4">
+                    <!--Custom Pagination -->
+                    <div class="services-swiper-pagination"></div>
+
+                    <!-- Custom navigation -->
+                    <div class="flex gap-5 justify-end items-center">
+                        <div class="custom-button custom-prev cursor-pointer w-[3rem] h-[3rem] flex items-center justify-center rounded-full" style="background-color:{{theme:primary_color}};">
+                            {{# <svg width="48"
+                                height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="24" fill="#1B8354" />
+                                <path
+                                    d="M20.9101 32.67C20.7201 32.67 20.5301 32.6 20.3801 32.45C20.0901 32.16 20.0901 31.68 20.3801 31.39L26.9001 24.87C27.3801 24.39 27.3801 23.61 26.9001 23.13L20.3801 16.61C20.0901 16.32 20.0901 15.84 20.3801 15.55C20.6701 15.26 21.1501 15.26 21.4401 15.55L27.9601 22.07C28.4701 22.58 28.7601 23.27 28.7601 24C28.7601 24.73 28.4801 25.42 27.9601 25.93L21.4401 32.45C21.2901 32.59 21.1001 32.67 20.9101 32.67Z"
+                                    fill="white" />
+                            </svg> #}}
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.91001 20.67C8.72001 20.67 8.53001 20.6 8.38001 20.45C8.09001 20.16 8.09001 19.68 8.38001 19.39L14.9 12.87C15.38 12.39 15.38 11.61 14.9 11.13L8.38001 4.61002C8.09001 4.32002 8.09001 3.84002 8.38001 3.55002C8.67001 3.26002 9.15001 3.26002 9.44001 3.55002L15.96 10.07C16.47 10.58 16.76 11.27 16.76 12C16.76 12.73 16.48 13.42 15.96 13.93L9.44001 20.45C9.29001 20.59 9.10001 20.67 8.91001 20.67Z" fill="white"/>
+                                </svg>
+                                
+                        </div>
+                        <div class="custom-button custom-next cursor-pointer rotate-[-180deg] w-[3rem] h-[3rem] flex items-center justify-center rounded-full" style="background-color:{{theme:primary_color}};">
+                            {{# <svg width="48" height="48"
+                                viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="24" fill="#1B8354" />
+                                <path
+                                    d="M20.9101 32.67C20.7201 32.67 20.5301 32.6 20.3801 32.45C20.0901 32.16 20.0901 31.68 20.3801 31.39L26.9001 24.87C27.3801 24.39 27.3801 23.61 26.9001 23.13L20.3801 16.61C20.0901 16.32 20.0901 15.84 20.3801 15.55C20.6701 15.26 21.1501 15.26 21.4401 15.55L27.9601 22.07C28.4701 22.58 28.7601 23.27 28.7601 24C28.7601 24.73 28.4801 25.42 27.9601 25.93L21.4401 32.45C21.2901 32.59 21.1001 32.67 20.9101 32.67Z"
+                                    fill="white" />
+                            </svg> #}}
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.91001 20.67C8.72001 20.67 8.53001 20.6 8.38001 20.45C8.09001 20.16 8.09001 19.68 8.38001 19.39L14.9 12.87C15.38 12.39 15.38 11.61 14.9 11.13L8.38001 4.61002C8.09001 4.32002 8.09001 3.84002 8.38001 3.55002C8.67001 3.26002 9.15001 3.26002 9.44001 3.55002L15.96 10.07C16.47 10.58 16.76 11.27 16.76 12C16.76 12.73 16.48 13.42 15.96 13.93L9.44001 20.45C9.29001 20.59 9.10001 20.67 8.91001 20.67Z" fill="white"/>
+                                </svg>
+                                
+                        </div>
+                    </div>
+
+                </div>
+            {{ /if }}
+            <!-- Custom Navigation -->
+        </div>
+    </section>
+    <!-- SERVICES SECTION ENDS -->
+{{ /if }}

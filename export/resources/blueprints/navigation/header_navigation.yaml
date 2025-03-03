@@ -1,0 +1,12 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: open_new_tab
+            field:
+              type: toggle
+              display: 'Open new tab'
+              localizable: true

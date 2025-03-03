@@ -1,0 +1,49 @@
+sections:
+  -
+    id: m3og87qt
+    title: 'Social Media'
+    links:
+      -
+        id: m3ogaxhq
+        icon: x-bg.svg
+        link: 'https://x.com'
+        type: new_set
+        enabled: true
+      -
+        id: m3oga1tb
+        icon: linkedin-bg.svg
+        link: 'https://linkedin.com'
+        type: new_set
+        enabled: true
+      -
+        id: m3og8i71
+        icon: instagram-bg.svg
+        link: 'https://instagram.com'
+        type: new_set
+        enabled: true
+    type: new_set
+    enabled: true
+  -
+    id: m3og8doq
+    title: 'Accessibility Tools'
+    links:
+      -
+        id: m3ogdu24
+        icon: hand-bg.svg
+        link: /access
+        type: new_set
+        enabled: true
+      -
+        id: m3ogdal2
+        icon: zoom-in-bg.svg
+        link: /search
+        type: new_set
+        enabled: true
+      -
+        id: m3ogcw7e
+        icon: eye-bg.svg
+        link: /view
+        type: new_set
+        enabled: true
+    type: new_set
+    enabled: true

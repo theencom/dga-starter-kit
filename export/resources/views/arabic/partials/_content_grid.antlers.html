@@ -1,0 +1,81 @@
+{{#
+    <div class="container-custom pt-9">
+        <h2>{{ section_title }}</h1>
+    </div>
+#}}
+
+<section class="container-custom mx-auto py-10 flex flex-col md:flex-row gap-4 flex-wrap">
+    {{ collection from="{collection}" sort="date:desc" }}
+        {{ if related_taxonomy_title }}
+            {{ if select_sport == related_taxonomy_title }}
+                <div
+                    class="h-auto  w-full md:w-[48%] xl:w-[32.333%] border border-[--border-primary-color] rounded-[--border-radius] bg-white dark:bg-darkBgLight dark:border-darkBorderColor p-4">
+                    <div class="flex flex-col justify-between h-full overflow-hidden">
+                        <div class="mb-6">
+                            <img src="{{ image }}" alt="{{ image:alt }}"
+                                class="w-full h-48 object-cover rounded-md mb-6" style="{{if image_position}} object-position: {{image_position}}; {{/if}}" />
+                            <div class="">
+                                {{ partial:partials/date_partial }}
+                                <h3 class="mb-2 dark:text-darkText">
+                                    {{ title | safe_truncate(60, '...') }}
+                                </h3>
+                                <p class="dark:text-darkText dark:opacity-darkTextOpacity">
+                                    {{ content | strip_tags | safe_truncate(90, '...') }}
+                                </p>
+                            </div>
+                        </div>
+                        <a {{if !popup}} href="{{ url }}" {{/if}} target="_blank"
+                            class="{{if popup}} info-popup-trigger {{/if}} btn-primary w-fit cursor-pointer"
+                            {{if popup}}
+                data-image="{{ image }}"
+                data-title="{{ title }}"
+                data-address="{{ city }}"
+                data-link="{{ url }}"
+                data-location="{{ map_link }}"
+                data-date="{{if yearly == "Annually" }} {{ start_date iso_format="MMMM YYYY" }} {{else}} {{ start_date iso_format="MMMM Do YYYY" }} {{/if}}"
+                data-age="{{ age }}"
+                data-gender="{{gender}}"
+                {{/if}}>
+                            اقرأ المزيد
+                        </a>
+                    </div>
+                </div>
+            {{ /if }}
+        {{ else }}
+            <div
+                class="h-auto  w-full md:w-[48%] xl:w-[32.333%] border border-[--border-primary-color] rounded-[--border-radius] bg-white dark:bg-darkBgLight dark:border-darkBorderColor p-4">
+                <div class="flex flex-col justify-between h-full overflow-hidden">
+                    <div class="mb-6">
+                        <img src="{{ image }}" alt="{{ image:alt }}"
+                            class="w-full h-48 object-cover rounded-md mb-6" style="{{if image_position}} object-position: {{image_position}}; {{/if}}" />
+                        <div class="">
+                            {{ partial:partials/date_partial }}
+                            <h3 class="mb-2 dark:text-darkText">
+                                {{ title | safe_truncate(60, '...') }}
+                            </h3>
+                            <p class="dark:text-darkText dark:opacity-darkTextOpacity">
+                                {{ content | strip_tags | safe_truncate(90, '...') }}
+                            </p>
+                        </div>
+                    </div>
+                    <a {{if !popup}} href="{{ url }}" {{/if}} target="_blank"
+                        class="{{if popup}} info-popup-trigger {{/if}} btn-primary w-fit cursor-pointer"
+                        {{if popup}}
+        data-image="{{ image }}"
+        data-title="{{ title }}"
+        data-address="{{ city }}"
+        data-link="{{ url }}"
+        data-location="{{ map_link }}"
+        data-date="{{if yearly == "Annually" }} {{ start_date iso_format="MMMM YYYY" }} {{else}} {{ start_date iso_format="MMMM Do YYYY" }} {{/if}}"
+        data-age="{{ age }}"
+        data-gender="{{gender}}"
+        {{/if}}>
+                        اقرأ المزيد
+                    </a>
+                </div>
+            </div>
+        {{ /if }}
+    {{ /collection }}
+
+
+</section>

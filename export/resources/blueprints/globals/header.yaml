@@ -1,0 +1,100 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: logo
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Logo
+              localizable: true
+          -
+            handle: logo_dark
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Logo Dark'
+              localizable: true
+      -
+        display: Buttons
+        fields:
+          -
+            handle: buttons
+            field:
+              type: replicator
+              display: Buttons
+              localizable: true
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: title
+                          field:
+                            type: text
+                            display: Title
+                        -
+                          handle: link
+                          field:
+                            type: link
+                            display: Link
+                        -
+                          handle: icon
+                          field:
+                            max_files: 1
+                            container: assets
+                            type: assets
+                            display: Icon
+                        -
+                          handle: id
+                          field:
+                            type: text
+                            display: id
+                        -
+                          handle: classes
+                          field:
+                            type: text
+                            display: Classes
+      -
+        display: 'Pre Header'
+        fields:
+          -
+            handle: weather
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Weather
+              localizable: true
+          -
+            handle: date
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Date
+              localizable: true
+          -
+            handle: time
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Time
+              localizable: true
+          -
+            handle: location
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Location
+              localizable: true

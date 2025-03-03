@@ -1,0 +1,13 @@
+primary_color: '#1b8354'
+secondary_color: '#54c08a'
+hover_primary_color: '#25935f'
+dark_mode_primary_color: '#1b8354'
+dark_mode_secondary_color: '#282828'
+favicon: favicon.webp
+og_image: greenhero2xcomp.jpg
+global_css:
+  code: null
+  mode: css
+global_javascript:
+  code: null
+  mode: javascript

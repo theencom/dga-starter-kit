@@ -1,0 +1,39 @@
+<section class="container-custom mx-auto py-10 flex flex-col md:flex-row gap-4 flex-wrap">
+    {{ event sort="date:desc" sport="{{ get:sport }}" }}
+        {{ if title_en }}
+            <div
+            class="h-auto  w-full md:w-[48%] xl:w-[32.333%] border border-[--border-primary-color] rounded-[--border-radius] bg-white dark:bg-darkBgLight dark:border-darkBorderColor p-4">
+            <div class="flex flex-col justify-between h-full overflow-hidden">
+                <div class="mb-6">
+                    <img src="{{ image }}" alt="{{ image:alt }}"
+                        class="w-full h-48 object-cover rounded-md mb-6" style="{{if image_position}} object-position: {{image_position}}; {{/if}}" />
+                    <div class="">
+                        {{ partial:events/database/partials/date_partial }}
+                        <h3 class="mb-2 dark:text-darkText">
+                            {{ title_en | safe_truncate(60, '...') }}
+                        </h3>
+                        <p class="dark:text-darkText dark:opacity-darkTextOpacity">
+                            {{ content | strip_tags | safe_truncate(90, '...') }}
+                        </p>
+                    </div>
+                </div>
+                <a 
+                class="{{if !popup}} info-popup-trigger {{/if}} btn-primary w-fit cursor-pointer"
+                {{if !popup}}
+                data-image="{{ image }}"
+                data-title="{{ title_en }}"
+                data-address="{{ city_name_en }}"
+                data-link="/events-forms/{{ sport.slug  }}?id={{ mahd_id }}"
+                data-location="{{ map_url }}"
+                data-date="{{if is_yearly }} {{ start_date iso_format="MMMM YYYY" }} {{else}} {{ start_date iso_format="MMMM Do YYYY" }} {{/if}}"
+                data-age="{{ age_group.from }} - {{ age_group.to }}"
+                data-gender="{{ gender_label }}"
+                {{/if}}
+                >
+                    Read More
+                </a>
+            </div>
+            </div>
+        {{ /if }}
+    {{ /event }}
+</section>

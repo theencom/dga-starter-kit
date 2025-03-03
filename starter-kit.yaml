@@ -1,0 +1,20 @@
+updatable: true
+export_paths:
+  - content
+  - config/filesystems.php
+  - config/statamic/assets.php
+  - resources/blueprints
+  - resources/fieldsets
+  - resources/forms
+  - resources/js
+  - resources/sites.yaml
+  - resources/js
+  - resources/css/site.css
+  - resources/views
+  - public/assets
+  - public/css
+  - package.json
+  - tailwind.config.js
+  - vite.config.js
+dependencies:
+  statamic/seo-pro: ^6.5

@@ -1,0 +1,13 @@
+tree:
+  -
+    id: fdfb8aa4-8584-4205-b137-5786fe05bd08
+    title: 'About DGA'
+    url: '#'
+  -
+    id: 8724bec0-94ee-4f88-a419-9969476ce2f2
+    title: 'Privacy and terms of use'
+    url: '#'
+  -
+    id: 8f6eb980-9b53-443c-9182-ff58d4bfb5ec
+    title: 'How to use DGA'
+    url: '#'

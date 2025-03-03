@@ -1,0 +1,25 @@
+logo: Logo-header.svg
+logo_dark: Logo-header.svg
+buttons:
+  -
+    id: search-btn
+    title: Search
+    icon: icons/search-alt-svgrepo-com.svg
+    type: new_set
+    enabled: true
+  -
+    title: عربي
+    icon: icons/translate-icon.svg
+    type: new_set
+    enabled: false
+    link: /ar
+  -
+    title: Login
+    icon: icons/user.svg
+    type: new_set
+    enabled: true
+    link: /cp
+weather: icons/cloudy.svg
+date: icons/date.svg
+time: icons/time.svg
+location: icons/location-nav.svg

@@ -1,0 +1,208 @@
+title: 'Background Color'
+fields:
+  -
+    handle: background_color
+    field:
+      options:
+        -
+          key: primaryGreen
+          value: 'Primary (Green - #1b8354)'
+        -
+          key: primaryGreen-25
+          value: 'Primary Green 25 - #f7fdf9'
+        -
+          key: primaryGreen-50
+          value: 'Primary Green 50 - #f3fcf6'
+        -
+          key: primaryGreen-100
+          value: 'Primary Green 100 - #dff6e7'
+        -
+          key: primaryGreen-200
+          value: 'Primary Green 200 - #b8eacb'
+        -
+          key: primaryGreen-300
+          value: 'Primary Green 300 - #88d8ad'
+        -
+          key: primaryGreen-400
+          value: 'Primary Green 400 - #54c08a'
+        -
+          key: primaryGreen-500
+          value: 'Primary Green 500 - #25935f'
+        -
+          key: primaryGreen-600
+          value: 'Primary Green 600 - #1b8354'
+        -
+          key: primaryGreen-700
+          value: 'Primary Green 700 - #166a45'
+        -
+          key: primaryGreen-800
+          value: 'Primary Green 800 - #14573a'
+        -
+          key: primaryGreen-900
+          value: 'Primary Green 900 - #104631'
+        -
+          key: primaryGreen-950
+          value: 'Primary Green 950 - #092a1e'
+        -
+          key: primaryYellow
+          value: 'Primary Yellow - #dba102'
+        -
+          key: lavender-25
+          value: 'Lavender 25 - #FEFCFF'
+        -
+          key: lavender-50
+          value: 'Lavender 50 - #F9F5FA'
+        -
+          key: lavender-100
+          value: 'Lavender 100 - #F2E9F5'
+        -
+          key: lavender-200
+          value: 'Lavender 200 - #E1CCE8'
+        -
+          key: lavender-300
+          value: 'Lavender 300 - #CCADD9'
+        -
+          key: lavender-400
+          value: 'Lavender 400 - #A57BBA'
+        -
+          key: lavender-500
+          value: 'Lavender 500 - #80519F'
+        -
+          key: lavender-600
+          value: 'Lavender 600 - #6D428F'
+        -
+          key: lavender-700
+          value: 'Lavender 700 - #532D75'
+        -
+          key: lavender-800
+          value: 'Lavender 800 - #3D1D5E'
+        -
+          key: lavender-900
+          value: 'Lavender 900 - #281047'
+        -
+          key: lavender-950
+          value: 'Lavender 950 - #16072E'
+        -
+          key: gold-25
+          value: 'Gold 25 - #FFFEF7'
+        -
+          key: gold-50
+          value: 'Gold 50 - #FFFEF2'
+        -
+          key: gold-100
+          value: 'Gold 100 - #FFFCE6'
+        -
+          key: gold-200
+          value: 'Gold 200 - #FCF3BD'
+        -
+          key: gold-300
+          value: 'Gold 300 - #FAE996'
+        -
+          key: gold-400
+          value: 'Gold 400 - #F7D54D'
+        -
+          key: gold-500
+          value: 'Gold 500 - #F5BD02'
+        -
+          key: gold-600
+          value: 'Gold 600 - #DBA102'
+        -
+          key: gold-700
+          value: 'Gold 700 - #B87B02'
+        -
+          key: gold-800
+          value: 'Gold 800 - #945C01'
+        -
+          key: gold-900
+          value: 'Gold 900 - #6E3C00'
+        -
+          key: gold-950
+          value: 'Gold 950 - #472400'
+        -
+          key: gray-25
+          value: 'Gray 25 - #FCFCFD'
+        -
+          key: gray-50
+          value: 'Gray 50 - #F9FAFB'
+        -
+          key: gray-100
+          value: 'Gray 100 - #F3F4F6'
+        -
+          key: gray-200
+          value: 'Gray 200 - #E5E7EB'
+        -
+          key: gray-300
+          value: 'Gray 300 - #D2D6DB'
+        -
+          key: gray-400
+          value: 'Gray 400 - #9DA4AE'
+        -
+          key: gray-500
+          value: 'Gray 500 - #6C737F'
+        -
+          key: gray-600
+          value: 'Gray 600 - #4D5761'
+        -
+          key: gray-700
+          value: 'Gray 700 - #384250'
+        -
+          key: gray-800
+          value: 'Gray 800 - #1F2A37'
+        -
+          key: gray-900
+          value: 'Gray 900 - #111927'
+        -
+          key: gray-950
+          value: 'Gray 950 - #0D121C'
+        -
+          key: darkBg
+          value: 'Dark Background - #282828'
+        -
+          key: darkBgLight
+          value: 'Dark Background Light - #8b8b8b'
+        -
+          key: darkText
+          value: 'Dark Text - #E5E5E5'
+      type: select
+      display: 'Background Color'
+      localizable: true
+      clearable: true
+  -
+    handle: background_color_opacity
+    field:
+      options:
+        -
+          key: 10%
+          value: 10%
+        -
+          key: 20%
+          value: 20%
+        -
+          key: 30%
+          value: 30%
+        -
+          key: 40%
+          value: 40%
+        -
+          key: 50%
+          value: 50%
+        -
+          key: 60%
+          value: 60%
+        -
+          key: 70%
+          value: 70%
+        -
+          key: 80%
+          value: 80%
+        -
+          key: 90%
+          value: 90%
+        -
+          key: 100%
+          value: 100%
+      max_items: 1
+      clearable: true
+      type: select
+      display: 'Background Color Opacity'
+      localizable: true

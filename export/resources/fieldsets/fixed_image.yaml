@@ -1,0 +1,11 @@
+title: 'Fixed Image'
+fields:
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Image
+      localizable: true
+      folder: board_members

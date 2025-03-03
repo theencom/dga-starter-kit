@@ -1,0 +1,94 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: was_this_page_useful
+            field:
+              type: text
+              display: 'Was this page useful?'
+              localizable: false
+              validate:
+                - required
+          -
+            handle: please_tell_us_why_yes
+            field:
+              options:
+                -
+                  key: 'Content is relevant'
+                  value: 'Content is relevant'
+                -
+                  key: 'It was well written'
+                  value: 'It was well written'
+                -
+                  key: 'The layout made it easy to read'
+                  value: 'The layout made it easy to read'
+                -
+                  key: 'Something else'
+                  value: 'Something else'
+              type: checkboxes
+              display: 'Please tell us why'
+              instructions: '(you can select multiple options)'
+              validate:
+                - required
+                - sometimes
+              localizable: false
+          -
+            handle: please_tell_us_why_no
+            field:
+              options:
+                -
+                  key: 'Content is not relevant'
+                  value: 'Content is not relevant'
+                -
+                  key: 'Content is not accurate'
+                  value: 'Content is not accurate'
+                -
+                  key: 'Content is too long'
+                  value: 'Content is too long'
+                -
+                  key: 'Something else'
+                  value: 'Something else'
+              type: checkboxes
+              display: 'Please tell us why'
+              instructions: '(you can select multiple options)'
+              validate:
+                - required
+                - sometimes
+              localizable: false
+          -
+            handle: sex
+            field:
+              options:
+                -
+                  key: Male
+                  value: Male
+                -
+                  key: Female
+                  value: Female
+                -
+                  key: 'I prefer not to say'
+                  value: 'I prefer not to say'
+              inline: true
+              type: radio
+              display: Sex
+              instructions: "I'm"
+              localizable: false
+              validate:
+                - required
+          -
+            handle: feedback
+            field:
+              type: textarea
+              display: Feedback
+              localizable: false
+              validate:
+                - required
+          -
+            handle: page_url
+            field:
+              type: text
+              display: 'Page URL'
+              localizable: false

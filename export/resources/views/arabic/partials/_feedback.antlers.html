@@ -1,0 +1,174 @@
+<section id="before-feedback-section" class="py-6 dark:bg-darkBgDeep dark:text-white">
+ <div class="container-custom">
+  <time id="" class="text-sm">آخر تعديل: {{ updated_at | format('d/m/Y g:s A') }} توقيت المملكة العربية السعودية</time>
+ </div>
+</section>
+  <!-- Feedback Questions -->
+<section id="feedback-section" class="py-6 border-t-2 border-[--primary-color] dark:bg-darkBgDeep dark:text-white dark:border-darkBgDeep">
+  <!-- Feedback Questions -->
+  <div id="question-bar" class="container-custom flex flex-col gap-2.5 sm:flex-row sm:gap-0 sm:items-center flex-wrap">
+    <p id="question-text" class="ml-6 order-2 sm:order-1">هل كانت هذه الصفحة مفيدة؟</p>
+    <div id="yes-no-buttons" class="flex gap-4 order-3 sm:order2 space-x-2 flex-initial sm:flex-1">
+      <button id="yes-button"
+        class="btn-primary">نعم</button>
+      <button id="no-button"
+        class="btn-primary">لا</button>
+    </div>
+    
+    <p id="survey" class="text-sm order-2 sm:order-3">
+      {{# <div>
+        <span class="numOfYes">{{ form:submissions was_this_page_useful:contains="Yes" in="Feedback" }} {{ count }} {{/form:submissions}}</span> من المستخدمين قالوا نعم من <span class="numOfYes">{{ form:submissions in="Feedback" }} {{ count | spaceless | trim }} {{/form:submissions}}</span> تعليق<
+      </div> #}}
+    </p>
+    <button id="close-button"
+      class="hidden items-center justify-end sm:justify-normal gap-1 order-1 sm:order-3 font-semibold hover:bg-[--button-secondary-hover] py-[--button-padding-block] px-[--button-padding-inline] rounded-[--button-border-radius] dark:text-darkText dark:hover:bg-darkBgLight">يغلق
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.53036 7.4697C8.23748 7.17679 7.76261 7.17676 7.4697 7.46964C7.17679 7.76252 7.17676 8.23739 7.46964 8.5303L9.9394 11.0003L7.47028 13.4697C7.1774 13.7626 7.17743 14.2375 7.47034 14.5304C7.76325 14.8232 8.23812 14.8232 8.531 14.5303L11 12.061L13.469 14.5303C13.7619 14.8232 14.2368 14.8232 14.5297 14.5304C14.8226 14.2375 14.8226 13.7626 14.5297 13.4697L12.0606 11.0003L14.5304 8.5303C14.8232 8.23739 14.8232 7.76252 14.5303 7.46964C14.2374 7.17676 13.7625 7.17679 13.4696 7.4697L11 9.9396L8.53036 7.4697Z" fill="currentColor"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M11 21.75C5.06294 21.75 0.25 16.9371 0.25 11C0.25 5.06294 5.06294 0.25 11 0.25C16.9371 0.25 21.75 5.06294 21.75 11C21.75 16.9371 16.9371 21.75 11 21.75ZM1.75 11C1.75 16.1086 5.89137 20.25 11 20.25C16.1086 20.25 20.25 16.1086 20.25 11C20.25 5.89137 16.1086 1.75 11 1.75C5.89137 1.75 1.75 5.89137 1.75 11Z" fill="currentColor"/>
+        </svg>
+        </button>
+  </div>
+
+
+{{#   
+    {{ form:feedback }}
+      {{ fields }}
+        <div class="p-2">
+          <label>
+            {{ display }}
+            {{ if validate | contains:required }}
+              <sup class="text-red">*</sup>
+            {{ /if }}
+          </label>
+          <div class="p-1">{{ field }}</div>
+          {{ if error }}
+            <p class="text-gray-500">{{ error }}</p>
+          {{ /if }}
+        </div>
+      {{ /fields }}
+      <button>يرسل</button>
+    {{ /form:feedback }}
+  #}}
+
+
+  <!-- Dynamic Content -->
+
+  {{ form:feedback }}
+    <div id="feedback-options" class="container-custom pt-5 hidden">
+      <div class="flex flex-col md:flex-row md:justify-between">
+        <div>
+          <input type="text" name="was_this_page_useful" value="" id="was_this_page_useful" class="hidden">
+          <!-- Questions for YES button -->
+          <div id="yes-options" class="space-y-4 hidden">
+            <label class="font-bold">
+              من فضلك أخبرنا لماذا<span class="text-xs text-[#6C737F] font-normal"><sup class="text-red-500 font-light"> * </sup>(يمكنك تحديد خيارات متعددة) </span>
+            </label>
+            <div class="space-y-4">
+              <input type="hidden" name="please_tell_us_why_yes[]" />
+
+              <label class="flex items-center font-medium w-fit">
+                <input type="checkbox" name="please_tell_us_why_yes[]" value="Content is relevant"
+                  class="ml-3 shrink-0" /> المحتوى ذو صلة
+              </label>
+              <label class="flex items-center font-medium w-fit">
+                <input type="checkbox" name="please_tell_us_why_yes[]" value="It was well written"
+                  class="ml-3 shrink-0" /> لقد كان مكتوبا بشكل جيد
+              </label>
+              <label class="flex items-center font-medium w-fit">
+                <input type="checkbox" name="please_tell_us_why_yes[]" value="The layout made it easy to read"
+                  class="ml-3 shrink-0" /> لقد جعل التخطيط الأمر سهلاً
+                read
+              </label>
+              <label class="flex items-center font-medium w-fit">
+                <input type="checkbox" name="please_tell_us_why_yes[]" value="Something else" class="ml-3 shrink-0" />
+                شيء آخر
+              </label>
+            </div>
+          </div>
+          <!-- Questions for NO button -->
+          <div id="no-options" class="space-y-4 hidden">
+            <label class="font-bold">
+              من فضلك أخبرنا لماذا <span class="text-xs text-[#6C737F] font-normal"><sup class="text-red-500 font-light"> * </sup>(يمكنك تحديد خيارات متعددة)</span>
+            </label>
+            <div class="space-y-4">
+              <input type="hidden" name="please_tell_us_why_no[]" />
+
+              <label class="flex items-center font-medium w-fit">
+                <input type="checkbox" name="please_tell_us_why_no[]" value="Content is not relevant"
+                  class="ml-3 shrink-0" /> المحتوى ليس له صلة
+              </label>
+              <label class="flex items-center font-medium w-fit">
+                <input type="checkbox" name="please_tell_us_why_no[]" value="Content is not accurate"
+                  class="ml-3 shrink-0" /> المحتوى غير دقيق
+              </label>
+              <label class="flex items-center font-medium w-fit">
+                <input type="checkbox" name="please_tell_us_why_no[]" value="Content is too long"
+                  class="ml-3 shrink-0" /> المحتوى طويل جدًا
+              </label>
+              <label class="flex items-center font-medium w-fit">
+                <input type="checkbox" name="please_tell_us_why_no[]" value="Something else" class="ml-3 shrink-0" />
+                شيء آخر
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feedback Text Area -->
+        <div class="w-full md:w-1/2 mt-5 md:mt-0">
+          <label class="block font-bold mb-2">تعليق <sup class="text-red-500 font-light">*</sup></label>
+          <div class="feedback-input-wrapper">
+            <textarea required
+              class="feedback-input-field w-full border border-[#9DA4AE] rounded-[4px] py-2 px-4 placeholder:text-[--text-default-color] hover:border-[#161616] focus:outline-none min-h-[96px] dark:bg-darkBgLight dark:placeholder:text-darkText dark:placeholder:opacity-darkTextOpacity"
+              name="feedback" rows="" placeholder="أدخل تعليقك هنا"></textarea>
+            <div class="feedback-animated-line"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Gender selection area -->
+      <div class="flex  flex-col sm:flex-row sm:items-center flex-wrap gap-4 mt-6">
+        <p class="font-bold">أنا <sup class="text-red-500 font-light">*</sup></p>
+
+        <label class="font-medium inline-flex items-center gap-2">
+          <input type="radio" name="sex" value="Male" class="shrink-0" />ذكر
+        </label>
+
+        <label class="font-medium inline-flex items-center gap-2">
+          <input type="radio" name="sex" value="Female" class="shrink-0" />أنثى
+        </label>
+
+        <label class="font-medium inline-flex items-center gap-2">
+          <input type="radio" name="sex" value="I prefer not to say" class="shrink-0" />أفضل أن لا أقول
+        </label>
+      </div>
+      <input type="hidden" name="page_url" value="{{ current_url }}">
+      <!-- Submit Button -->
+      <div class="mt-7 sm:space-y-0 space-y-7 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+        <p>لمزيد من المعلومات يمكنك مراجعة <a href="#" class="text-[#1B8354] underline">بيانات المشاركة الإلكترونية</a> و <a href="#" class="text-[#1B8354] underline">قواعد الاشتباك</a></p>
+        <button id="submit-button"
+          class="btn-primary ml-0 sm:ml-4 w-fit">
+          يرسل
+        </button>
+      </div>
+    </div>
+  {{ /form:feedback }}
+
+  <!-- Confirmation Message -->
+  <div id="confirmation-message"
+    class="hidden flex flex-col gap-3 sm:gap-0 container-custom sm:justify-between sm:items-center ">
+    <div class="inline-flex items-center gap-5">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M1.75 11C1.75 16.1086 5.89137 20.25 11 20.25C16.1086 20.25 20.25 16.1086 20.25 11C20.25 10.0319 20.1015 9.0999 19.8267 8.22474C19.7025 7.82956 19.9223 7.40858 20.3175 7.28446C20.7126 7.16034 21.1336 7.38008 21.2577 7.77526C21.5778 8.79419 21.75 9.87769 21.75 11C21.75 16.9371 16.9371 21.75 11 21.75C5.06294 21.75 0.25 16.9371 0.25 11C0.25 5.06294 5.06294 0.25 11 0.25C12.1223 0.25 13.2058 0.422239 14.2247 0.742266C14.6199 0.866385 14.8397 1.28736 14.7155 1.68254C14.5914 2.07772 14.1704 2.29746 13.7753 2.17334C12.9001 1.89847 11.9681 1.75 11 1.75C5.89137 1.75 1.75 5.89137 1.75 11Z"
+          fill="#1B8354" />
+        <path
+          d="M20.5577 2.50174C20.8348 2.19386 20.8099 1.71964 20.502 1.44254C20.1941 1.16544 19.7199 1.1904 19.4428 1.49828L10.9714 10.9107L8.03033 7.96968C7.73744 7.67678 7.26256 7.67678 6.96967 7.96968C6.67678 8.26257 6.67678 8.73744 6.96967 9.03034L10.4697 12.5303C10.6152 12.6758 10.814 12.7552 11.0197 12.7497C11.2254 12.7443 11.4198 12.6547 11.5575 12.5017L20.5577 2.50174Z"
+          fill="#1B8354" />
+      </svg>
+      <p>لقد تم تقديم تعليقك!</p>
+    </div>
+    {{# <p id="survey" class="text-sm order-2 sm:order-3"><span class="numOfYes">{{ form:submissions was_this_page_useful:contains="Yes" in="Feedback" }} {{ count }} {{/form:submissions}}</span> من المستخدمين قالوا نعم من <span class="numOfYes">{{ form:submissions in="Feedback" }} {{ count | spaceless | trim }} {{/form:submissions}}</span> تعليق</p> #}}
+
+  </div>
+</section>

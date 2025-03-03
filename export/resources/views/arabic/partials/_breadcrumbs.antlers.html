@@ -1,0 +1,8 @@
+<!-- BREADCRUMB -->
+<nav aria-label="breadcrumb" class="pb-6 dark:bg-darkBg dark:text-darkText">
+    <ul class="container-custom breadcrumb flex items-center flex-wrap text-sm">
+        {{ nav:breadcrumbs }}
+        <li class="inline-flex items-center {{ if is_current }} current-page {{/if}}"><a href="{{url}}">{{title}}</a></li>
+        {{ /nav:breadcrumbs }}
+    </ul>
+</nav>

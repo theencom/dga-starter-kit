@@ -1,0 +1,11 @@
+{{if selected_collection}}
+
+    {{ selected_collection }}
+    {{ if handle }}
+        {{ partial:content_carousel collection="{handle}" }}
+    {{ else }}
+        <p>No collection selected.</p>
+    {{ /if }}
+    {{ /selected_collection }}
+
+{{/if}}

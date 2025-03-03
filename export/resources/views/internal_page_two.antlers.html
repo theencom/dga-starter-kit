@@ -1,0 +1,79 @@
+<div class="bg-gradient-to-b from-[#F7FDF9] via-[#F7FDF9] to-white py-10 dark:bg-darkBg dark:bg-none dark:text-darkText" style="background-size: 100% 250px; background-repeat: no-repeat">
+  <!-- BREADCRUMB -->
+  <div class="pt-5">
+    {{ partial:partials/breadcrumbs }}
+  </div>
+  <!-- MAIN SECTION STARTS -->
+  <section class="pb-8">
+    <div class="container-custom flex flex-col md:flex-row !gap-8">
+      <!-- LEFT SIDE START -->
+      <div class="md:w-[80%]">
+        {{ partial:partials/left_side }}
+      </div>
+      <!-- LEFT SIDE END -->
+
+      <!-- RIGHT SIDE START -->
+      {{ partial:partials/right_side }}
+      <!-- RIGHT SIDE END -->
+    </div>
+  </section>
+</div>
+
+<!-- SERVICES SECTION STARTS -->
+
+{{ full_width }}
+  {{ blocks }}
+    {{ partial:partials/cards_slider }}
+  {{ /blocks }}
+{{ /full_width }}
+
+<!-- SERVICES SECTION ENDS -->
+
+<style>
+  .right-side_top:first-of-type {
+    padding-top: 0;
+  }
+
+  .right-side_top:last-of-type {
+    border: 0;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabsParent = document.getElementById('tabs-parent');
+    const tabs = tabsParent.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabContents.forEach((content, index) => {
+      content.style.display = index === 0 ? 'block' : 'none';
+    });
+
+    tabs.forEach((tab, index) => {
+      if (index === 0) {
+        tab.classList.add('tab-content-style', 'font-bold');
+      }
+    });
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(tab => {
+          tab.classList.remove('tab-content-style', 'font-bold');
+        });
+
+        tab.classList.add('tab-content-style', 'font-bold');
+
+        const tabId = tab.id.split('tab-')[1];
+
+        tabContents.forEach(content => {
+          content.style.display = 'none';
+        });
+
+        const targetContent = document.getElementById(`tabContent-${tabId}`);
+        if (targetContent) {
+          targetContent.style.display = 'block';
+        }
+      });
+    });
+  });
+</script>

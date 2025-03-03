@@ -1,0 +1,208 @@
+<div
+    class="fixed bottom-5 md:bottom-auto md:top-[10rem] right-0 z-[999] flex flex-col items-center  rounded-l-2xl p-4 space-y-4 border-l border-t border-b border-white" style="background-color:{{theme:primary_color}};">
+    <!-- Message Button -->
+    <button id="openMessagePopup"
+        class="flex items-center justify-center w-12 h-12 border border-primaryGreen-100 rounded-full text-white shadow-md transition">
+        <svg class="w-6 h-6" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M7 12C7 11.4477 7.44772 11 8 11H8.00897C8.56126 11 9.00897 11.4477 9.00897 12C9.00897 12.5523 8.56126 13 8.00897 13H8C7.44772 13 7 12.5523 7 12Z"
+                fill="white" />
+            <path
+                d="M10.9955 12C10.9955 11.4477 11.4432 11 11.9955 11H12.0045C12.5568 11 13.0045 11.4477 13.0045 12C13.0045 12.5523 12.5568 13 12.0045 13H11.9955C11.4432 13 10.9955 12.5523 10.9955 12Z"
+                fill="white" />
+            <path
+                d="M15.991 11C15.4387 11 14.991 11.4477 14.991 12C14.991 12.5523 15.4387 13 15.991 13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H15.991Z"
+                fill="white" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M1.25 11.5667C1.25 5.83838 6.09523 1.25 12 1.25C17.9048 1.25 22.75 5.83838 22.75 11.5667C22.75 17.295 17.9048 21.8834 12 21.8834C11.3041 21.8843 10.6103 21.8199 9.92698 21.6916C9.68979 21.647 9.53909 21.6189 9.42696 21.6036C9.3784 21.5969 9.34829 21.5944 9.33186 21.5934L9.34625 21.588C9.34625 21.588 9.34016 21.5894 9.32976 21.591L9.32144 21.5921C9.32401 21.5922 9.32717 21.5931 9.33186 21.5934C9.31489 21.5999 9.28193 21.6133 9.22775 21.6391C9.11322 21.6935 8.96068 21.7744 8.72714 21.8986C7.29542 22.66 5.62504 22.93 4.01396 22.6303C3.75381 22.5819 3.5384 22.4 3.44713 22.1517C3.35586 21.9033 3.40224 21.6252 3.56917 21.4199C4.03697 20.8445 4.35863 20.1513 4.50088 19.4052C4.53937 19.2 4.45227 18.9213 4.18451 18.6494C2.36972 16.8065 1.25 14.3144 1.25 11.5667ZM12 2.75C6.86033 2.75 2.75 6.72875 2.75 11.5667C2.75 13.8958 3.69695 16.0165 5.25326 17.5969C5.72749 18.0784 6.13604 18.8292 5.97477 19.6838L5.97453 19.6851C5.87064 20.2306 5.69385 20.7566 5.45049 21.2484C6.34434 21.2273 7.2293 20.9962 8.02284 20.5742L8.03831 20.566L8.04167 20.5642C8.2542 20.4512 8.43594 20.3545 8.58422 20.2841C8.72841 20.2156 8.9084 20.138 9.10329 20.1082C9.29305 20.0792 9.47741 20.0964 9.63085 20.1175C9.78416 20.1385 9.97171 20.1737 10.1863 20.214L10.2038 20.2173C10.7958 20.3285 11.3966 20.3842 11.999 20.3834C17.1387 20.3834 21.25 16.4047 21.25 11.5667C21.25 6.72875 17.1397 2.75 12 2.75Z"
+                fill="white" />
+        </svg>
+
+    </button>
+    <!-- Call Button -->
+    <button id="openCallPopup"
+        class="flex items-center justify-center w-12 h-12 border border-primaryGreen-100 rounded-full text-white shadow-md transition">
+        <svg class="w-6 h-6" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M6.61564 2.28746C6.33524 1.78443 5.88395 1.40369 5.31726 1.28657C4.74466 1.16822 4.16911 1.34279 3.69608 1.72833C1.97971 3.12724 0.88688 5.36852 1.36118 7.71974C1.65272 9.165 2.13843 10.591 3.12755 12.3157C5.11263 15.777 8.2197 18.8858 11.6851 20.8732C13.4098 21.8623 14.8358 22.348 16.281 22.6396C18.6322 23.1139 20.8735 22.021 22.2724 20.3047C22.658 19.8316 22.8325 19.2561 22.7142 18.6835C22.5971 18.1168 22.2163 17.6655 21.7133 17.3851L20.1109 16.4919C19.5207 16.1629 19.0239 15.886 18.5922 15.7052C18.1342 15.5134 17.6825 15.3995 17.1831 15.4516C16.6838 15.5036 16.2653 15.7083 15.8568 15.9905C15.4716 16.2565 15.0427 16.6299 14.5331 17.0736L11.9741 19.3014C9.0751 17.5328 6.46617 14.9227 4.69932 12.0267L6.92718 9.46767C7.37088 8.95804 7.74428 8.52917 8.01029 8.14399C8.29246 7.7354 8.49711 7.31696 8.54919 6.8176C8.60126 6.31824 8.48735 5.86658 8.29554 5.40857C8.11473 4.9768 7.83786 4.48011 7.50885 3.88991L6.61564 2.28746ZM16.5776 21.1692C15.552 20.9623 14.5376 20.6486 13.3712 20.0739L15.487 18.2319C16.0358 17.7541 16.4015 17.4372 16.7092 17.2247C17.0012 17.0231 17.1799 16.96 17.3387 16.9435C17.4976 16.9269 17.6854 16.9517 18.0128 17.0888C18.3577 17.2332 18.7808 17.4678 19.4165 17.8221L20.983 18.6953C21.1738 18.8017 21.2311 18.9187 21.2452 18.9871C21.2582 19.0496 21.2572 19.176 21.1097 19.357C19.9859 20.7358 18.2737 21.5113 16.5776 21.1692ZM5.76884 8.51376L3.92685 10.6296C3.35213 9.46319 3.03844 8.44871 2.83156 7.42313C2.48943 5.72708 3.26497 4.01482 4.64374 2.89106C4.82478 2.74351 4.95115 2.7426 5.01365 2.75552C5.08207 2.76966 5.19905 2.82693 5.30543 3.01778L6.17861 4.58429C6.53292 5.21993 6.76754 5.6431 6.91196 5.98797C7.04905 6.31533 7.07384 6.50319 7.05728 6.66202C7.04072 6.82086 6.9777 6.99956 6.77602 7.29159C6.56355 7.59925 6.24667 7.9649 5.76884 8.51376Z"
+                fill="white" />
+            <path
+                d="M14.8624 1.27963C14.4644 1.16478 14.0487 1.3943 13.9339 1.79228C13.819 2.19025 14.0485 2.60597 14.4465 2.72082C17.7361 3.67013 20.3304 6.26432 21.2799 9.55383C21.3947 9.9518 21.8104 10.1813 22.2084 10.0664C22.6064 9.95158 22.8359 9.53584 22.721 9.13787C21.6287 5.35317 18.6472 2.37184 14.8624 1.27963Z"
+                fill="white" />
+            <path
+                d="M14.2936 6.14174C13.9123 5.97984 13.472 6.15766 13.3101 6.53893C13.1482 6.92019 13.326 7.36051 13.7073 7.52241C14.9517 8.05085 15.9499 9.049 16.4783 10.2934C16.6402 10.6746 17.0805 10.8525 17.4618 10.6906C17.843 10.5286 18.0209 10.0883 17.859 9.70707C17.1786 8.10499 15.8957 6.82207 14.2936 6.14174Z"
+                fill="white" />
+        </svg>
+
+    </button>
+</div>
+
+
+
+<!-- Message Us Popup -->
+<div id="popupMessage"
+    class="hidden fixed bottom-0 left-0 md:left-auto md:right-4 bg-white shadow-lg rounded-lg w-[320px] z-[99999999999]">
+    <div class="flex items-center justify-between p-2 bg-primaryGreen-600 text-white rounded-t-lg">
+        <h3>Message Us</h3>
+        <div class="flex items-center">
+            <button id="minimizeMessagePopup" class="mr-2">_</button>
+            <button id="closeMessagePopup">×</button>
+        </div>
+    </div>
+    <div class="p-4">
+        <p>Message form goes here...</p>
+    </div>
+</div>
+
+<!-- Call Us Popup -->
+<div id="popupCall"
+    class="hidden fixed bottom-0 left-0 md:left-auto md:right-4  bg-white shadow-lg rounded-lg w-[320px] z-[99999999999]">
+    <div class="flex items-center justify-between p-2 bg-primaryGreen-600 text-white rounded-t-lg">
+        <h3>Call Us</h3>
+        <div class="flex items-center">
+            <button id="minimizeCallPopup" class="mr-2">_</button>
+            <button id="closeCallPopup">×</button>
+        </div>
+    </div>
+    {{# <div class="p-4">
+        {{ form:create in="contact_us" }}
+            {{ if success }}
+                <div class="bg-green-00 text-white p-2">
+                    {{ success }}
+                </div>
+            {{ else }}
+                {{ if errors }}
+                    <div class="bg-red-300 text-white p-2">
+                        {{ errors }}
+                            {{ value }}<br>
+                        {{ /errors }}
+                    </div>
+                {{ /if }}
+                {{ fields }}
+                    <div class="py-2">
+                        <label class="block text-sm font-semibold mb-2">{{ display }}</label>
+                        <div class="input-wrapper">
+                            {{ field }}
+                            <div class="animated-line"></div>
+                        </div>
+                        {{ if error }}
+                            <p class="text-gray-500">{{ error }}</p>
+                        {{ /if }}
+                        
+                    </div>
+                {{ /fields }}
+
+
+                <input type="text" class="hidden" name="{{ honeypot ?? 'honeypot' }}">
+
+
+                <button type="submit" class="btn-primary">Submit</button>
+            {{ /if }}
+        {{ /form:create }}
+    </div> #}}
+
+
+    <div id="contactFormContainer" class="p-4">
+        {{ form:create in="contact_us" id="contactForm" class="contact-form" }}
+            <div id="formResponse" class="hidden"></div> <!-- Placeholder for success or error messages -->
+        <div class="form_fields">
+            {{ fields }}
+            <div class="py-2">
+                <label class="block text-sm font-semibold mb-2">{{ display }}</label>
+                <div class="input-wrapper">
+                    {{ field }}
+                    <div class="animated-line"></div>
+                </div>
+                {{ if error }}
+                    <p class="text-gray-500">{{ error }}</p>
+                {{ /if }}
+            </div>
+        {{ /fields }}
+        <input type="text" class="hidden" name="{{ honeypot ?? 'honeypot' }}">
+        <button type="submit" class="btn-primary">Submit</button>
+        </div>
+        {{ /form:create }}
+    </div>
+
+</div>
+
+
+
+<div class="fixed bottom-[4rem] left-[20px] z-50">
+    <a href="https://deaf.dga.gov.sa/" target="_blank" class="rounded-full w-10 h-10 flex items-center justify-center bg-green-600">
+        <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M5.75 9C5.75 5.54822 8.54822 2.75 12 2.75C15.4518 2.75 18.25 5.54822 18.25 9C18.25 11.3758 16.8211 13.4785 14.8021 14.8845C13.8179 15.57 13.1802 16.4583 12.8822 17.8421C12.4004 20.0789 10.9582 21.25 9.30769 21.25C8.50891 21.25 7.91989 20.9181 7.50985 20.376C7.08407 19.8131 6.82692 18.9844 6.82692 18C6.82692 17.5858 6.49114 17.25 6.07692 17.25C5.66271 17.25 5.32692 17.5858 5.32692 18C5.32692 19.2247 5.64431 20.3961 6.3135 21.2808C6.99842 22.1864 8.02478 22.75 9.30769 22.75C11.8205 22.75 13.7534 20.9211 14.3486 18.1579C14.5669 17.1443 14.9874 16.5834 15.6594 16.1155C17.9481 14.5215 19.75 12.0088 19.75 9C19.75 4.71979 16.2802 1.25 12 1.25C7.71979 1.25 4.25 4.71979 4.25 9C4.25 9.41421 4.58579 9.75 5 9.75C5.41421 9.75 5.75 9.41421 5.75 9Z"
+                fill="white" />
+            <path
+                d="M10.2216 7.82766C9.94742 8.37898 9.81544 9.09045 9.76956 9.83565C11.1537 10.1477 12.2578 11.2827 12.2578 12.75C12.2578 14.4813 10.7207 15.75 9 15.75C8.58579 15.75 8.25 15.4142 8.25 15C8.25 14.5858 8.58579 14.25 9 14.25C10.0494 14.25 10.7578 13.504 10.7578 12.75C10.7578 11.996 10.0494 11.25 9 11.25C8.58579 11.25 8.25 10.9142 8.25 10.5C8.25 9.45944 8.3653 8.19167 8.87858 7.15967C9.14105 6.63197 9.51767 6.14542 10.0528 5.79307C10.5918 5.43822 11.2456 5.25 12.0094 5.25C13.115 5.25 14.0296 5.68223 14.6791 6.40948C15.3157 7.12236 15.6617 8.07563 15.7473 9.0867C15.7823 9.49944 15.476 9.86237 15.0633 9.89732C14.6506 9.93228 14.2876 9.62603 14.2527 9.2133C14.1879 8.44853 13.9337 7.8268 13.5603 7.40864C13.1997 7.00485 12.6942 6.75 12.0094 6.75C11.5004 6.75 11.1416 6.87217 10.8777 7.04593C10.61 7.22219 10.3933 7.48247 10.2216 7.82766Z"
+                fill="white" />
+        </svg>
+    </a>
+</div>
+
+<script>
+    // Get all relevant elements
+    const messagePopup = document.getElementById('popupMessage');
+    const callPopup = document.getElementById('popupCall');
+    const openMessagePopupBtn = document.getElementById('openMessagePopup');
+    const openCallPopupBtn = document.getElementById('openCallPopup');
+    const closeMessagePopupBtn = document.getElementById('closeMessagePopup');
+    const closeCallPopupBtn = document.getElementById('closeCallPopup');
+    const minimizeMessagePopupBtn = document.getElementById('minimizeMessagePopup');
+    const minimizeCallPopupBtn = document.getElementById('minimizeCallPopup');
+
+    // Function to close all popups
+    function closeAllPopups() {
+        messagePopup.classList.add('hidden');
+        callPopup.classList.add('hidden');
+    }
+
+    // Function to unminimize a popup (if minimized)
+    function unminimizePopup(popup) {
+        const contentArea = popup.querySelector('.p-4');
+        if (contentArea.classList.contains('hidden')) {
+            contentArea.classList.remove('hidden');
+        }
+    }
+
+    // Open Message Popup
+    openMessagePopupBtn.addEventListener('click', () => {
+        if (messagePopup.classList.contains('hidden')) {
+            closeAllPopups(); // Ensure all other popups are closed
+            messagePopup.classList.remove('hidden'); // Open the Message Popup
+        }
+        unminimizePopup(messagePopup); // Ensure it is not minimized
+    });
+
+    // Open Call Popup
+    openCallPopupBtn.addEventListener('click', () => {
+        if (callPopup.classList.contains('hidden')) {
+            closeAllPopups(); // Ensure all other popups are closed
+            callPopup.classList.remove('hidden'); // Open the Call Popup
+        }
+        unminimizePopup(callPopup); // Ensure it is not minimized
+    });
+
+    // Close Message Popup
+    closeMessagePopupBtn.addEventListener('click', () => {
+        messagePopup.classList.add('hidden');
+    });
+
+    // Close Call Popup
+    closeCallPopupBtn.addEventListener('click', () => {
+        callPopup.classList.add('hidden');
+    });
+
+    // Minimize Message Popup
+    minimizeMessagePopupBtn.addEventListener('click', () => {
+        const contentArea = messagePopup.querySelector('.p-4'); // Target the content area
+        contentArea.classList.toggle('hidden'); // Toggle visibility of content area
+    });
+
+    // Minimize Call Popup
+    minimizeCallPopupBtn.addEventListener('click', () => {
+        const contentArea = callPopup.querySelector('.p-4'); // Target the content area
+        contentArea.classList.toggle('hidden'); // Toggle visibility of content area
+    });
+</script>

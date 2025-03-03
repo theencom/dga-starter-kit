@@ -1,0 +1,121 @@
+<!-- Info Popup -->
+<div id="infoPopupContainer" class="hidden fixed inset-0 z-50">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    
+    <!-- Popup Content -->
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 max-w-lg bg-white rounded-lg shadow-xl overflow-hidden">
+      <!-- Close Button with white circular background -->
+      <button id="infoPopupClose" class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg z-10">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+  
+      <!-- Image -->
+      <div class="w-full h-48">
+        <div id="infoPopupImage" class="w-full h-full bg-cover bg-center bg-no-repeat brightness-75"></div>
+      </div>
+  
+      <!-- Content -->
+      <div class="p-6">
+        <h2 id="infoPopupTitle" class="text-2xl font-bold mb-6"></h2>
+        
+        <div class="space-y-6">
+          <div>
+            <div class="text-gray-600 mb-1">مكان</div>
+            <div class="flex justify-between items-center">
+              <div id="infoPopupAddress" class="text-gray-900"></div>
+              <a href="" target="_blank" id="infoPopupLocation" class="text-primaryGreen-600 flex items-center space-x-1">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <span>موقع</span>
+            </a>
+            </div>
+          </div>
+  
+          <div class="flex justify-between">
+            <div>
+              <div class="text-gray-600 mb-1">تاريخ</div>
+              <div id="infoPopupDate" class="text-gray-900"></div>
+            </div>
+            <div>
+              <div class="text-gray-600 mb-1">جنس</div>
+              <div id="infoPopupGender" class="text-gray-900"></div>
+            </div>
+          </div>
+  
+          <div>
+            <div class="text-gray-600 mb-1">الفئة العمرية</div>
+            <div id="infoPopupAge" class="text-gray-900"></div>
+          </div>
+  
+          <a id="infoPopupLink" href="" target="_blank" 
+            class="block w-full bg-primaryGreen-600 hover:bg-primaryGreen-900 text-white text-center font-medium py-3 px-4 rounded transition-colors">
+            انضم إلينا
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <script>
+    // Get all elements
+    const infoPopupContainer = document.getElementById('infoPopupContainer');
+    const infoPopupImage = document.getElementById('infoPopupImage');
+    const infoPopupTitle = document.getElementById('infoPopupTitle');
+    const infoPopupAddress = document.getElementById('infoPopupAddress');
+    const infoPopupLocation = document.getElementById('infoPopupLocation');
+    const infoPopupDate = document.getElementById('infoPopupDate');
+    const infoPopupAge = document.getElementById('infoPopupAge');
+    const infoPopupGender = document.getElementById('infoPopupGender');
+    const infoPopupLink = document.getElementById('infoPopupLink');
+    const infoPopupCloseBtn = document.getElementById('infoPopupClose');
+    const infoPopupTriggers = document.querySelectorAll('.info-popup-trigger');
+
+    // Add click handlers to all trigger buttons
+    infoPopupTriggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        // Set content
+        infoPopupImage.style.backgroundImage = `url('${trigger.dataset.image}')`;
+        infoPopupTitle.textContent = trigger.dataset.title;
+        infoPopupAddress.textContent = trigger.dataset.address;
+        infoPopupDate.textContent = trigger.dataset.date;
+        infoPopupAge.textContent = trigger.dataset.age;
+        infoPopupGender.textContent = trigger.dataset.gender;
+        infoPopupLink.href = trigger.dataset.link;
+        infoPopupLocation.href = trigger.dataset.location;
+
+        // Show popup
+        infoPopupContainer.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close popup handler
+    const closeInfoPopup = () => {
+      infoPopupContainer.classList.add('hidden');
+      document.body.style.overflow = '';
+    };
+
+    // Add close button click handler
+    infoPopupCloseBtn.addEventListener('click', closeInfoPopup);
+
+    // Close on backdrop click
+    infoPopupContainer.addEventListener('click', (e) => {
+      if (e.target === infoPopupContainer) {
+        closeInfoPopup();
+      }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeInfoPopup();
+      }
+    });
+  </script>
+
+  

@@ -1,0 +1,39 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: sections
+            field:
+              max_sets: 3
+              type: replicator
+              display: Sections
+              localizable: true
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: title
+                          field:
+                            type: text
+                            display: Title
+                        -
+                          handle: navigation
+                          field:
+                            max_items: 1
+                            mode: select
+                            type: navs
+                            display: Navigation
+          -
+            handle: footer_secondary_navigation
+            field:
+              max_items: 1
+              type: navs
+              display: 'Footer Secondary Navigation'
+              localizable: true

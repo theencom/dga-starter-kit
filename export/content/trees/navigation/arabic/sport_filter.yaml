@@ -1,0 +1,25 @@
+tree:
+  -
+    id: fd0ece91-4d34-4950-a7fb-625d29eab071
+    entry: 471e7744-7d07-43b3-a7ed-e0777469c887
+    title: 'كل الفعاليات'
+  -
+    id: a70a8af6-a29c-4549-a168-4998a7aca333
+    entry: 8e8fede8-a7a3-42b1-bdf8-7a524d69be16
+    title: 'أحداث ألعاب القوى'
+  -
+    id: ea8ae5d9-2751-41ab-8451-8c574d321517
+    entry: d7492f91-a7dc-4fd8-b0b3-8d757cd90c1f
+    title: 'أحداث كرة القدم'
+  -
+    id: 625063ee-91eb-48f0-b17d-14b8380228a5
+    entry: 11be36d4-cc33-472d-b93c-0cf0a30037cd
+    title: 'فعاليات كرة اليد'
+  -
+    id: c01e8705-bb2d-4caa-9904-41f456676bdb
+    entry: 25c89aa9-0fb4-49d5-8749-2871610442ee
+    title: 'فعاليات الجودو'
+  -
+    id: b1704c0e-3e6d-418d-98da-80c66117ca8f
+    entry: 91e6aed1-271d-43c8-bc41-0d70a4d0efba
+    title: 'فعاليات التايكوندو'

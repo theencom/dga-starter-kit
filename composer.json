@@ -1,0 +1,24 @@
+{
+    "name": "theencom/dga-theme",
+    "extra": {
+        "statamic": {
+            "name": "DGA Theme",
+            "description": "Starter kit to develop DGA approved websites"
+        },
+        "laravel": {
+            "providers": [
+                "Theen\\DGATheme\\ServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Theen\\DGATheme\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    }
+}

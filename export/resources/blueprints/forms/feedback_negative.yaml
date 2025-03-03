@@ -1,0 +1,46 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: please_tell_us_why
+            field:
+              options:
+                -
+                  key: 'Content is not relevant'
+                  value: 'Content is not relevant'
+                -
+                  key: 'Content is not accurate'
+                  value: 'Content is not accurate'
+                -
+                  key: 'Content is too long'
+                  value: 'Content is too long'
+                -
+                  key: 'Something else'
+                  value: 'Something else'
+              type: checkboxes
+              display: 'Please tell us why'
+              instructions: '(you can select multiple options)'
+          -
+            handle: sex
+            field:
+              options:
+                -
+                  key: Male
+                  value: Male
+                -
+                  key: Female
+                  value: Female
+                -
+                  key: 'I prefer not to say'
+                  value: 'I prefer not to say'
+              type: radio
+              display: Sex
+              instructions: "I'm"
+          -
+            handle: feedback
+            field:
+              type: textarea
+              display: Feedback

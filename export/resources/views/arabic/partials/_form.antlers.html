@@ -1,0 +1,45 @@
+{{ form:create in="{ select_form:handle }" }}
+ 
+    {{ if success }}
+        <div class="bg-green-600 text-white p-2">
+            تم الإرسال بنجاح.
+        </div>
+    {{ else }}
+        {{ if errors }}
+            <div class="bg-red-300 text-white p-2">
+                {{ errors }}
+                    {{ value }}<br>
+                {{ /errors }}
+            </div>
+        {{ /if }}
+ 
+
+        {{ fields }}
+            <div class="py-2">
+                <div class="inline-flex items-center gap-1">
+                    <label class="block text-sm font-semibold mb-2">{{ display }}</label>
+                {{ if validate | contains:required }}
+                    <sup class="text-red-500">*</sup>
+                {{ /if }}
+                </div>
+                <div class="input-wrapper">
+                    {{ field }}
+                    <div class="animated-line"></div>
+                </div>
+                {{ if error }}
+                    <p class="text-gray-500">{{ error }}</p>
+                {{ /if }}
+                
+            </div>
+        {{ /fields }}
+ 
+
+        <input type="text" class="hidden" name="{{ honeypot ?? 'honeypot' }}">
+ 
+
+        <button type="submit" class="btn-primary">يُقدِّم</button>
+    {{ /if }}
+ 
+{{ /form:create  }}
+
+

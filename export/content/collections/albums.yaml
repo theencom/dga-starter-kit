@@ -1,0 +1,21 @@
+title: Albums
+sites:
+  - english
+  - arabic
+propagate: false
+template: albums/show
+layout: layout
+revisions: false
+route: '/albums/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+structure:
+  root: false

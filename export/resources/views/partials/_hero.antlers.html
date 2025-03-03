@@ -1,0 +1,17 @@
+{{if version =="hero_section_1"}}
+<section class="py-10 {{if hero_background_color}} bg-{{hero_background_color}} {{theme:primary_color}} {{else}} {{/if}} bg-opacity-[{{hero_background_color_opacity}}] bg-cover bg-right md:bg-left" style="{{if hero_background_image}}background-image:url('{{hero_background_image}}');{{/if}}">
+    <div class="container-custom flex {{if flip}} md:flex-row-reverse {{else}} md:flex-row {{/if}} flex-col-reverse  items-center justify-center gap-12 py-12">
+        <div class="w-full md:w-2/3 {{if hero_background_color}} p-2 {{/if}}" style="background-color: {{hero_background_color}};">
+            {{if quote}} <img src="/assets/quote.svg" alt="icon" class="mb-8"> {{/if}}
+            {{if title}}<h2 class="dark:text-{{text_color_dark}} text-{{text_color_light}} {{if title_font_weight =='bold'}} font-bold {{else}} !font-light {{/if}}">{{title}}</h2> {{/if}}
+            {{if quote}} <div class="w-32 bg-black h-[1px] my-6"></div> {{/if}}
+            {{if has_description}}
+                <p class="mt-6 w-full md:w-[80%] dark:text-{{text_color_dark}} text-{{text_color_light}} {{if description_font_weight =='bold'}} font-bold {{else}} !font-light {{/if}}">{{description}}</p>
+            {{/if}}
+        </div>
+        <div class="w-full md:w-1/3"> 
+            <img src="{{hero_image}}" alt="{{ hero_image:alt }}" class="w-full">
+        </div>
+    </div>
+    </section>
+{{/if}}

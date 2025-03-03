@@ -1,0 +1,25 @@
+<div class="bg-[#F7FDF9] py-10">
+    <div>
+        {{ partial:partials/breadcrumbs }}
+    </div>
+    <div class="container-custom mx-auto">
+        <h2 >{{ title }}</h2>
+    </div>
+</div>
+<div class="container-custom mx-auto py-12 px-4">
+
+
+        <ul class="text-[#1B8354] text-base">
+            {{ nav :from="sitemap" }}
+                <li class="list-disc mb-3">
+                    <a href="{{ url }}" {{ if is_parent }} class="on" {{ /if }}>{{ title }}</a>
+                    {{ if is_current || is_parent }}
+                        {{ if children }}
+                            <ul>{{ *recursive children* }}</ul>
+                        {{ /if }}
+                    {{ /if }}
+                </li>
+            {{ /nav }}
+        </ul>
+
+</div>

@@ -1,0 +1,87 @@
+title: Button
+fields:
+  -
+    handle: toggle
+    field:
+      display: 'Toggle Button'
+      type: toggle
+      instructions: 'Display Button'
+      localizable: true
+  -
+    handle: label
+    field:
+      display: Label
+      type: text
+      if:
+        toggle: 'equals true'
+      localizable: true
+  -
+    handle: video_trigger
+    field:
+      type: toggle
+      display: 'Video?'
+      localizable: true
+  -
+    handle: link
+    field:
+      display: Link
+      type: link
+      if:
+        toggle: 'equals true'
+      localizable: true
+  -
+    handle: link_type
+    field:
+      options:
+        -
+          key: phone
+          value: Phone
+        -
+          key: email
+          value: Email
+      max_items: 1
+      type: select
+      display: 'Link Type'
+      localizable: false
+  -
+    handle: button_variant
+    field:
+      options:
+        brand: Brand
+        secondary: Secondary
+        outline: Outline
+        white: White
+      default: brand
+      display: Variant
+      type: button_group
+      instructions: 'Button variant, default brand.'
+      width: 50
+      if:
+        toggle: 'equals true'
+      localizable: true
+  -
+    handle: button_size
+    field:
+      options:
+        sm: Small
+        md: Medium
+        lg: Large
+        xl: 'Extra Large'
+      default: md
+      display: 'Button Size'
+      type: button_group
+      instructions: 'Select button size, default medium.'
+      width: 50
+      if:
+        toggle: 'equals true'
+      localizable: true
+  -
+    handle: target_blank
+    field:
+      display: 'Target Blank'
+      type: toggle
+      instructions: 'Open link in new tab or window.'
+      width: 50
+      if:
+        toggle: 'equals true'
+      localizable: true

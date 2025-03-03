@@ -1,0 +1,59 @@
+  <!-- FEEDBACK SECTION -->
+  {{partial:partials/feedback}}
+  <!-- FOOTER SECTION STARTS -->
+  <footer class="bg-[{{theme:primary_color}}] text-white pt-10 pb-6 flex flex-col gap-12" style="background-color:{{theme:primary_color}}">
+    <div class="container-custom pt-4 pb-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- Overview -->
+      {{footer_navs:sections}}
+      <div class="footer-section">
+        <p class="footer_section_heading font-medium relative pb-2 mb-2">{{title}}</p>
+        <ul class="text-sm flex flex-col gap-2">
+          {{navigation}}
+            {{nav :handle="handle"}}
+              <li><a href="{{url}}" class="hover:underline">{{title}}</a></li>
+            {{ /nav }}
+          {{/navigation}}
+        </ul>
+      </div>
+      {{/footer_navs:sections}}
+
+      <!-- Social Media & Accessibility Tools -->
+      <div class="footer-section flex flex-row flex-wrap sm:flex-col justify-between mt-5 sm:mt-0">
+        {{footer_tools:sections}}
+        <div class="space-y-2 mb-8 last:mb-0">
+          <p class="footer_section_heading font-medium relative pb-2">{{title}}</p>
+          <div class="social-icons inline-flex gap-2">
+            {{links}}
+            <a href="{{link}}" target="_blank" class="icon hover:bg-[rgba(255,255,255,0.2)] active:bg-[rgba(255,255,255,0.4)] rounded-[4px]"><img src="{{icon}}" alt="Icon"></a>
+            {{/links}}
+          </div>
+        </div>
+        {{/footer_tools:sections}}
+      </div>
+    </div>
+
+
+    <div class="container-custom text-sm flex-wrap sm:flex-nowrap flex justify-between items-center py-4">
+      <div class="">
+        <div class="links text-sm flex flex-wrap gap-x-4 mb-7">
+          {{footer_navs:footer_secondary_navigation}}
+          {{nav :handle="handle"}}
+          <a href="{{url}}" class="underline">{{title}}</a>
+          {{ /nav }}
+          {{/footer_navs:footer_secondary_navigation}}
+        </div>
+        <p class="font-semibold text-sm mb-4">{{footer_tools:footer_copyright_information}}</p>
+        <time class="text-sm mb-2">Last Modified: {{ site:global_last_updated | format('d/m/Y') }}</time>
+      </div>
+
+      <div class="footer-logos inline-flex gap-4 mt-8 sm:mt-0">
+        {{footer_tools:footer_logos}}
+          {{logo}}
+          <a href="{{link}}" class="logo-box"><img src="{{url}}" alt="Logo" class="h-[2.625rem] w-auto"></a>
+          {{/logo}}
+        {{/footer_tools:footer_logos}}
+        <a href="https://raqmi.dga.gov.sa/platforms/platforms/e86fb734-bd1f-4dfb-c210-08dc8472f3fa/platform-license" target="_blank" class="h-[39px] w-[127px]">{{ footer_tools:external_code }}</a>
+      </div>
+    </div>
+  </footer>
+  <!-- FOOTER SECTION ENDS -->

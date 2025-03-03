@@ -1,0 +1,44 @@
+<!-- HERO SECTION STARTS -->
+<section class="swiper hero-slider w-full h-[80vh] relative">
+    <div class="swiper-wrapper">
+        {{ event sort="date:desc" }}
+            <div class="swiper-slide !flex items-center swiper-slide-bg bg-cover bg-center h-full relative"
+            style="background-image: url('{{ image }}')">
+            <div class="overlay absolute top-0 left-0 w-full h-full bg-[rgba(16,33,21,0.8)] z-[1] opacity-50"></div>
+            <div class="container-custom hero-text text-white z-[2] relative {{if alignment == "Center"}} flex flex-col items-center justify-center {{/if}}">
+                <h1 class="hero_slider_heading">{{ title_ar }}</h1>
+                <p class="hero_slider_description w-full lg:w-[50%] mt-6 mb-8">
+                    {{ content | strip_tags | safe_truncate(90, '...') }}
+                </p>
+                <div class="flex flex-col md:flex-row md:items-center gap-2">
+                
+                    <a 
+                    class="{{if !popup}} info-popup-trigger {{/if}} btn-primary !bg-white !text-black w-fit cursor-pointer"
+                    {{if !popup}}
+                    data-image="{{ image }}"
+                    data-title="{{ title_ar }}"
+                    data-address="{{ city_name_ar }}"
+                    data-link="/events-forms/{{ sport.slug  }}?id={{ mahd_id }}"
+                    data-location="{{ map_url }}"
+                    data-date="{{if is_yearly }} {{ start_date iso_format="MMMM YYYY" }} {{else}} {{ start_date iso_format="MMMM Do YYYY" }} {{/if}}"
+                    data-age="{{ age_group.from }} - {{ age_group.to }}"
+                    data-gender="{{ gender_label }}"
+                    {{/if}}
+                    >
+                        قراءة المزيد
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{ /event }}
+
+
+    </div>
+    {{if slides:count > 1}}
+    <!-- Add pagination for bullet navigation -->
+    <div class="swiper-pagination hero-pagination pb-3"></div>
+    {{/if}}
+</section>
+
+<!-- HERO SECTION ENDS -->
+

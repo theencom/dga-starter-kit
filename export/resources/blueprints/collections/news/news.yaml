@@ -1,0 +1,203 @@
+title: News
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: true
+              validate:
+                - required
+          -
+            handle: hashtags
+            field:
+              type: replicator
+              display: Hashtags
+              localizable: true
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: hashtag
+                          field:
+                            type: text
+                            display: Hashtag
+                            localizable: true
+          -
+            handle: longform_content
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - h1
+                - h4
+                - h5
+                - h6
+                - underline
+                - strikethrough
+                - small
+                - superscript
+                - subscript
+                - code
+                - codeblock
+                - horizontalrule
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+              remove_empty_nodes: false
+              target_blank: true
+              type: bard
+              display: 'Longform Content'
+              localizable: true
+              container: assets
+              sets:
+                news_set:
+                  display: 'News Set'
+                  icon: media-news-paper
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: news_images
+                          field:
+                            min_files: 1
+                            container: assets
+                            type: assets
+                            display: 'News Images'
+                            localizable: true
+                            folder: news
+          -
+            handle: image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Image
+              localizable: true
+              folder: news
+          -
+            handle: image_position
+            field:
+              options:
+                -
+                  key: top
+                  value: Top
+                -
+                  key: center
+                  value: Center
+                -
+                  key: bottom
+                  value: Bottom
+              max_items: 1
+              type: select
+              display: 'Image Position'
+              localizable: true
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              localizable: true
+              max_items: 1
+          -
+            handle: content
+            field:
+              type: markdown
+              display: Content
+              localizable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: select_sport
+            field:
+              options:
+                -
+                  key: Football
+                  value: Football
+                -
+                  key: Handball
+                  value: Handball
+                -
+                  key: Judo
+                  value: Judo
+                -
+                  key: Taekwondo
+                  value: Taekwondo
+                -
+                  key: Athletics
+                  value: Athletics
+                -
+                  key: General
+                  value: General
+              type: select
+              display: 'Select Sport'
+              localizable: true
+              default: General
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate:
+                - 'max:200'
+              generate: false
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              localizable: true
+              validate:
+                - required
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - news
+              max_items: 1
+              listable: false
+              localizable: true
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+  SEO:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            handle: seo
+            field:
+              type: seo_pro
+              listable: false
+              display: SEO
+              localizable: true

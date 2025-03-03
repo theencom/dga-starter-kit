@@ -1,0 +1,16 @@
+title: 'Font Weight'
+fields:
+  -
+    handle: font_weight
+    field:
+      options:
+        -
+          key: normal
+          value: normal
+        -
+          key: bold
+          value: bold
+      max_items: 1
+      type: select
+      display: 'Font Weight'
+      localizable: true

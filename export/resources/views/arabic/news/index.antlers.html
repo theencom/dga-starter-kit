@@ -1,0 +1,28 @@
+{{ blocks }}
+    {{ selected_collection }}
+        {{ if handle }}
+            {{ partial:content_slider collection="{handle}" related_taxonomy_title="{related_taxonomy:title}" }}
+        {{ else }}
+            <p>لم يتم العثور على أي عناصر..</p>
+        {{ /if }}
+    {{ /selected_collection }}
+
+
+    {{ selected_collection }}
+        <div class="container-custom pt-9">
+            <div class="block md:flex items-center justify-between">
+                <h2 class="mb-4 md:mb-0 dark:text-white">{{ section_title }}</h1>
+                    {{ partial:partials/sports_filter_news }}
+            </div>
+        </div>
+        {{ if handle }}
+            {{ partial:content_grid collection="{handle}" related_taxonomy_title="{related_taxonomy:title}" }}
+        {{ else }}
+            <p>لم يتم العثور على أي عناصر..</p>
+        {{ /if }}
+    {{ /selected_collection }}
+{{ /blocks }}
+
+
+
+{{ partial:partials/info_popup }}

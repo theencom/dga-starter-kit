@@ -1,0 +1,31 @@
+title: Tags
+fields:
+  -
+    handle: toggle_tags
+    field: button.toggle
+    config:
+      display: 'Toggle Tags'
+  -
+    handle: tags
+    field:
+      type: replicator
+      display: Tags
+      if:
+        toggle_tags: 'equals true'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: color
+                  field:
+                    type: color
+                    display: Color

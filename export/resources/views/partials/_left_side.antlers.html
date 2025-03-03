@@ -1,0 +1,97 @@
+{{ left_side }}
+  {{ blocks }}
+    <div class="left-side">
+      {{ if heading }}
+        <div class="left-side_headingBtn flex justify-between flex-wrap">
+          <h2 class="mb-4 mr-3">{{ heading }}</h2>
+          {{ if toggle }}
+            <a href="{{ link }}" class="btn-primary">
+              {{ label }}
+            </a>
+          {{ /if }}
+        </div>
+      {{ /if }}
+      {{ if toggle_tags }}
+        <div class="tags flex gap-2 flex-wrap mb-4 text-xs leading-[1.124rem] font-medium">
+          {{ tags }}
+            <div
+              class="px-2 h-[24px] flex items-center justify-center rounded-[4px] border border-[{{ color }}] !bg-[{{ color }}] bg-opacity-95 text-[{{ color }}]">
+              {{ title }}
+            </div>
+          {{ /tags }}
+        </div>
+      {{ /if }}
+      <p class="mb-4 dark:opacity-darkTextOpacity">
+        {{ paragraph }}
+      </p>
+      {{ if toggle_extras }}
+        <div class="flex gap-6 items-center flex-wrap">
+          {{ buttons }}
+            <a href="{{ link }}"
+              class="inline-flex items-center gap-2 primaryText dark:text-white hover:text-[#54C08A] hover:underline group"><span>{{ label }}</span><svg
+                width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                class="text-[#1B8354] group-hover:text-[#54C08A]">
+                <path
+                  d="M14.2229 1.83121C12.7843 0.333932 10.4411 0.333934 9.00241 1.83121L8.40781 2.45004C8.16865 2.69894 8.17655 3.09459 8.42545 3.33375C8.67436 3.5729 9.07 3.565 9.30916 3.3161L9.90376 2.69727C10.8505 1.71191 12.3748 1.71191 13.3216 2.69727C14.2819 3.69668 14.2819 5.32699 13.3216 6.3264L10.6221 9.1359C10.4724 9.29176 10.3093 9.42204 10.1375 9.5276C9.2141 10.0952 8.00471 9.96896 7.20428 9.1359C7.07407 9.00039 6.96165 8.85356 6.86688 8.69835C6.68699 8.40375 6.30234 8.31076 6.00775 8.49065C5.71315 8.67054 5.62016 9.05519 5.80005 9.34979C5.94132 9.58115 6.109 9.80014 6.30292 10.002C7.51501 11.2634 9.37311 11.4647 10.7921 10.5925C11.0543 10.4313 11.3003 10.2342 11.5235 10.002L14.2229 7.19246C15.6481 5.70925 15.6481 3.31442 14.2229 1.83121Z"
+                  fill="currentColor" />
+                <path
+                  d="M9.69733 5.99787C8.25868 4.5006 5.91541 4.5006 4.47676 5.99787L1.77724 8.80737C0.352085 10.2906 0.352086 12.6854 1.77724 14.1686C3.2159 15.6659 5.55916 15.6659 6.99782 14.1686L7.59263 13.5496C7.83179 13.3007 7.82389 12.905 7.57499 12.6659C7.32609 12.4267 6.93044 12.4346 6.69128 12.6835L6.09647 13.3026C5.14968 14.2879 3.62537 14.2879 2.67859 13.3026C1.7183 12.3032 1.7183 10.6728 2.67859 9.67344L5.37811 6.86394C6.32489 5.87858 7.8492 5.87858 8.79598 6.86394C8.92616 6.99942 9.03855 7.14621 9.13331 7.30137C9.31322 7.59596 9.69787 7.68892 9.99246 7.50902C10.287 7.32911 10.38 6.94446 10.2001 6.64987C10.0589 6.41858 9.89121 6.19965 9.69733 5.99787Z"
+                  fill="currentColor" />
+              </svg></a>
+          {{ /buttons }}
+        </div>
+      {{ /if }}
+      <!-- TABS -->
+      {{ if tabs }}
+        <div class="bg-white mt-4 dark:bg-darkBg dark:text-darkText">
+          <div class="flex mb-6 gap-8 overflow-x-scroll md:overflow-hidden" id="tabs-parent">
+            {{ tabs }}
+              <button
+                class="tab py-3 rounded-[4px] text-[#384250] text-sm relative focus:outline-none focus-visible:border-2 focus-visible:border-[#161616] dark:text-darkText"
+                id="tab-{{ tab_title | dashify }}">
+                {{ tab_title }}
+              </button>
+            {{ /tabs }}
+          </div>
+
+          {{ tabs }}
+            <div id="tabContent-{{ tab_title | dashify }}" class="tab-content gap-6">
+              {{ if video }}
+                <div class="video">
+                  <video id="video" class="video-element w-full" controls>
+                    <source src="{{ video }}" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              {{ /if }}
+              {{ if image }}
+                <div class="video">
+                  <img src="{{ image }}" alt="{{ image:alt }}" class="w-full max-w-[30rem]" />
+                </div>
+              {{ /if }}
+              {{ if list }}
+                <ol class="list-decimal space-y-4  ml-5 mt-6">
+                  {{ list }}
+                    <li>
+                      {{ list_content }}
+                    </li>
+                  {{ /list }}
+                </ol>
+              {{ /if }}
+              {{ if text }}
+                <p class="">{{ text }}</p>
+              {{ /if }}
+            </div>
+          {{ /tabs }}
+        </div>
+      {{ /if }}
+    </div>
+    {{ if is_contact_form }}
+      {{ partial:partials/_contact_us_form }}
+    {{ else }}
+      {{ if select_form }}
+        {{ partial:_form }}
+      {{ /if }}
+    {{ /if }}
+  {{ /blocks }}
+{{ /left_side }}

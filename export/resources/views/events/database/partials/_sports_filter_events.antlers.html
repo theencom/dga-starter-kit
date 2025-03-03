@@ -1,0 +1,13 @@
+<div class="flex items-center justify-end">
+    <form id="sport_filter_form" method="get" action="" class="flex w-full">
+    <select  name="sport"
+        class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+        onchange="this.form.submit()">
+        <option value="" disabled selected>Select a sport</option>
+        <option value="all" selected>All Events</option>
+        {{ sport }}
+            <option {{  if get:sport == slug }} selected {{  /if }} value="{{ slug }}">{{ name_en }}</option>
+        {{ /sport }}
+    </select>
+    </form>
+</div>
