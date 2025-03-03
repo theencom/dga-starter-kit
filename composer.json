@@ -1,5 +1,5 @@
 {
-    "name": "theencom/dga-theme",
+    "name": "theencom/dga-starter-kit",
     "extra": {
         "statamic": {
             "name": "DGA Theme",
