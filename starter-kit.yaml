@@ -1,16 +1,7 @@
 updatable: true
 export_paths:
   - content
-  - config/filesystems.php
-  - config/statamic/assets.php
-  - resources/blueprints
-  - resources/fieldsets
-  - resources/forms
-  - resources/js
-  - resources/sites.yaml
-  - resources/js
-  - resources/css/site.css
-  - resources/views
+  - resources
   - public
   - package.json
   - tailwind.config.js

@@ -163,7 +163,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Function to show current user weather
-    const apiKey = '77faeb08b1bcedc1e1b33a47a06d79e0';
 
     // Function to fetch weather data and city name
     async function fetchWeather(lat, lon) {
