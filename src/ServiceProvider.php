@@ -1,6 +1,6 @@
 <?php
 
-namespace Theen\DGATheme;
+namespace Theencom\DGAStarterKit;
 
 use Statamic\Providers\AddonServiceProvider;
 

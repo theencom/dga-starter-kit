@@ -11,8 +11,7 @@ export_paths:
   - resources/js
   - resources/css/site.css
   - resources/views
-  - public/assets
-  - public/css
+  - public
   - package.json
   - tailwind.config.js
   - vite.config.js
