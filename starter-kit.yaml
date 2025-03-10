@@ -1,10 +1,12 @@
 updatable: true
 export_paths:
   - content
-  - resources
-  - public
+  - config/filesystems.php
+  - config/statamic/assets.php
+  - resources/blueprints
+  - resources/css/site.css
+  - resources/views
+  - public/assets
+  - public/css
   - package.json
   - tailwind.config.js
-  - vite.config.js
-dependencies:
-  statamic/seo-pro: ^6.5
