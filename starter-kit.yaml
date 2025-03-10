@@ -1,12 +1,25 @@
 updatable: true
 export_paths:
-  - content
-  - config/filesystems.php
+  - app/Tags
+  - content/assets
+  - content/globals
+  - content/navigation
+  - content/taxonomies
+  - content/trees
+  - content/collections/
+  - config/statamic/cp.php
   - config/statamic/assets.php
+  - resources/sites.yaml
+  - resources/forms
+  - resources/fieldsets
   - resources/blueprints
-  - resources/css/site.css
+  - resources/css
+  - resources/js
   - resources/views
-  - public/assets
-  - public/css
+  - routes/web.php
+  - public/build/
+  - public/assets/
   - package.json
   - tailwind.config.js
+  - vite.config.js
+  - postcss.config.js
