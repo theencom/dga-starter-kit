@@ -1,12 +1,7 @@
 updatable: true
 export_paths:
   - app/Tags
-  - content/assets
-  - content/globals
-  - content/navigation
-  - content/taxonomies
-  - content/trees
-  - content/collections/
+  - content
   - config/statamic/cp.php
   - config/statamic/assets.php
   - resources/sites.yaml
@@ -23,3 +18,5 @@ export_paths:
   - tailwind.config.js
   - vite.config.js
   - postcss.config.js
+dependencies:
+  statamic/seo-pro: ^6.5
